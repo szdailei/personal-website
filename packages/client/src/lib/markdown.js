@@ -2,11 +2,11 @@ import config from '../config';
 import { getDownloadFileUrl } from './network';
 
 function getImagesDir() {
-  return config.imagesFilesDir;
+  return config.IMAGES_DIR;
 }
 
 function getVideosDir() {
-  return config.videosFilesDir;
+  return config.VIDEOS_DIR;
 }
 
 function getLocalImagesUrl() {

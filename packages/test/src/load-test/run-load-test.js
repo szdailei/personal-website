@@ -111,7 +111,7 @@ function createTableRow(result) {
   return [result.host, result.status, maxLatency, meanLatency, throughput, requests];
 }
 
-async function testMultiTargets (duration, connections)  {
+async function testMultiTargets(duration, connections) {
   let summary = `Plan duration:${duration}s, Concurrent connections per site:${connections}\n`;
   const table = new Table({ head: ['Host', 'Status', 'Max-latency', 'Mean-latency', 'Throughput', 'Requests'] });
   await Promise.all(
@@ -126,6 +126,6 @@ async function testMultiTargets (duration, connections)  {
   );
   const output = `${summary}${table.toString()}`;
   console.log(output); // eslint-disable-line no-console
-};
+}
 
-export default testMultiTargets
+export default testMultiTargets;

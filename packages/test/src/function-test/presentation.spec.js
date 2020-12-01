@@ -32,7 +32,7 @@ describe(presentationReq, () => {
   到最后一页时，按动Space键，currentPageNum等于totalPagesNum。
   到最后一页时，按动Home键，currentPageNum等于1。
   到第一页时，按动PageUp键，currentPageNum等于1。
-  到第一页时，按动End键，currentPageNum等于totalPagesNum。`
+  到第一页时，按动End键，currentPageNum等于totalPagesNum。`;
   test(forwardBackwardReq, async () => {
     await forwardBackward(page);
   });

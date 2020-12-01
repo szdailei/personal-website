@@ -35,7 +35,7 @@ async function fetchData(url, type) {
 }
 
 function getServerConfigUrl() {
-  const serverConfigUrl = `${window.location.protocol}//${window.location.host}/${config.serverConfigFile}`;
+  const serverConfigUrl = `${window.location.protocol}//${window.location.host}/${config.SERVER_CONFIG_FILE}`;
   return serverConfigUrl;
 }
 

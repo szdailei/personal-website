@@ -101,7 +101,9 @@
 
 ## Test tools
 
-- [jasmine-markdown-reporter](https://github.com/binodnp/jasmine-markdown-reporter) - Generates jasmine test report as a single document that can live in your project. Uses Github-flavored markdown.
+- [git-log-parser](https://github.com/bendrucker/git-log-parser/blob/master/src/index.js) - Run git log and return a stream of commit objects.
+- [git-raw-commits](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/git-raw-commits#readme) - Get raw git commits out of your repository using git-log(1)
+- [jest-html-reporters](https://github.com/Hazyzh/jest-html-reporters) - Jest test results processor for generating a summary in HTML
 - [json-server](https://github.com/typicode/json-server) - Get a full fake REST API with zero coding in less than 30 seconds (seriously)
 - [faker.js](https://github.com/Marak/faker.js) - generate massive amounts of realistic fake data in Node.js and the browser
 - [Minikube](https://github.com/kubernetes/minikube) - Run Kubernetes locally.

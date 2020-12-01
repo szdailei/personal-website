@@ -1,9 +1,9 @@
 const config = {
-  serverConfigFile: 'server-config.json',
+  SERVER_CONFIG_FILE: 'server-config.json',
   apiGatewayEndPoint: undefined,
   downloadServerUrl: undefined,
-  imagesFilesDir: 'courses/images/',
-  videosFilesDir: 'courses/videos/',
+  IMAGES_DIR: 'courses/images/',
+  VIDEOS_DIR: 'courses/videos/',
 };
 
 export default config;
