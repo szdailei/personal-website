@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es2017": true,
+    "browser": true,
+    "node": true,
+    "serviceworker": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "17.0"
+    }
+  },
+  "extends": ["airbnb", "plugin:react-hooks/recommended", "prettier"],
+  "rules": {
+    "import/extensions": "off"
+  }
+}

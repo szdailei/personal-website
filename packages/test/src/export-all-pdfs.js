@@ -1,0 +1,37 @@
+/* eslint-disable no-await-in-loop */
+import puppeteer from 'puppeteer-core/lib/esm/puppeteer/node.js';
+import gotoPresentation from './function-test/lib/goto-presentation.js';
+import setFontSizes from './function-test/lib/set-font-sizes.js';
+import exportPdf from './function-test/export-pdf.js';
+import { getLinkByFileName } from './function-test/lib/eval-presentation.js';
+import config from './config.js';
+
+(async () => {
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: config.PUPPETEER_EXECUTABLE_PATH,
+  });
+
+  const result = await gotoPresentation(browser, config);
+  const { page } = result;
+  const { fileNames } = result;
+  await page.goBack();
+  await page.waitForSelector(config.LOADED_ID);
+
+  for (let i = 0; i < fileNames.length; i += 1) {
+    const link = await getLinkByFileName(page, fileNames[i]);
+    await link.click();
+    await page.waitForSelector(config.LOADED_ID);
+
+    await setFontSizes(page, 19);
+    const options = {
+      path: `${config.PDFS_DIR}${fileNames[i]}.pdf`,
+      ...config.VIEWPORT,
+    };
+    await exportPdf(page, options);
+
+    await page.goBack();
+    await page.waitForSelector(config.LOADED_ID);
+  }
+  await browser.close();
+})();

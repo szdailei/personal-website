@@ -1,0 +1,27 @@
+{
+  "license": "MIT",
+  "private": "true",
+  "name": "@dailei/api-server",
+  "exports": "./dist/index.js",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
+    "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
+    "clean": "rimraf dist && mkdirp dist",
+    "prepare": "yarn clean && node ../../modify-puppeteer.js",
+    "dev": "yarn prepare && NODE_ENV=development nodemon src/index.js",
+    "build": "yarn prepare && cp .env* dist/ && yarn rollup -c ../../rollup.config.js",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "dotenv-defaults": "^2.0.0",
+    "graphql": "^15.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "loglevel": "^1.7.0",
+    "postgres": "^2.0.0-beta.2",
+    "puppeteer-core": "^5.4.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "license": "MIT",
+  "private": "true",
+  "name": "@dailei/client",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
+    "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
+    "clean": "rimraf dist && mkdirp dist dist/www dist/local dist/local/courses/images dist/local/courses/videos",
+    "copy:www": "cp -r public/* dist/www/",
+    "copy:local": "mkdirp dist/local/tmp && cp -r public/* dist/local/tmp",
+    "copy:images": "cp ../../../www-data/storage/courses/images/{*.jpg,*.png,*.webp} dist/local/courses/images/",
+    "copy:videos": "cp ../../../www-data/storage/courses/videos/{*.mp4,*.vtt} dist/local/courses/videos/",
+    "dev": "yarn clean && yarn copy:www && yarn rollup --watch -c rollup.config.www.js",
+    "inline": "yarn html-inline -i dist/local/tmp/index.html -o dist/local/local-presentation.html && rimraf dist/local/tmp",
+    "build:www": "yarn copy:www && yarn rollup -c rollup.config.www.js",
+    "build:local": "yarn copy:local && yarn rollup -c rollup.config.local.js && yarn inline && yarn copy:images && yarn copy:videos",
+    "build": "yarn clean && yarn build:www && yarn build:local"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.35",
+    "@emotion/styled": "^10.0.27",
+    "graphql-request": "^2.0.0",
+    "history": "^5.0.0",
+    "marked": "^1.2.2",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^6.0.0-beta.0"
+  }
+}
