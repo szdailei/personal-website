@@ -16,20 +16,13 @@ async function forwardBackward(page) {
   await page.keyboard.down('Space');
   expect(await getCurrentPageNum(page)).toBe(totalPagesNum);
 
-  for (count; count > 1; count -= 1) {
-    await page.keyboard.down('PageUp');
-    expect(await getCurrentPageNum(page)).toBe(count - 1);
-  }
-
+  await page.keyboard.down('Home');
   expect(await getCurrentPageNum(page)).toBe(1);
   await page.keyboard.down('PageUp');
   expect(await getCurrentPageNum(page)).toBe(1);
 
   await page.keyboard.down('End');
   expect(await getCurrentPageNum(page)).toBe(totalPagesNum);
-
-  await page.keyboard.down('Home');
-  expect(await getCurrentPageNum(page)).toBe(1);
 }
 
 export default forwardBackward;

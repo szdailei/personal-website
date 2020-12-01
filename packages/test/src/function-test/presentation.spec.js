@@ -30,10 +30,9 @@ describe(presentationReq, () => {
   const forwardBackwardReq = `每页如果有header，则footer可见，否则footer不可见。
   到最后一页前，每页footer的currentPageNum等于按动Space键的次数+1。
   到最后一页时，按动Space键，currentPageNum等于totalPagesNum。
-  到第一页前，按动PageUp键，currentPageNum减1。
+  到最后一页时，按动Home键，currentPageNum等于1。
   到第一页时，按动PageUp键，currentPageNum等于1。
-  到第一页时，按动End键，currentPageNum等于totalPagesNum。
-  到最后一页时，按动Home键，currentPageNum等于1。`;
+  到第一页时，按动End键，currentPageNum等于totalPagesNum。`
   test(forwardBackwardReq, async () => {
     await forwardBackward(page);
   });

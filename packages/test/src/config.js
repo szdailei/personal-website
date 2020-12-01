@@ -5,9 +5,9 @@ const config = {
   PDFS_DIR: 'pdfs/',
   VIEWPORT: {
     width: 1920,
-    height: 1024,
+    height: 1280,
     expectedPdfWidth: 1440,
-    expectedPdfHeight: 768,
+    expectedPdfHeight: 960,
   },
 };
 
