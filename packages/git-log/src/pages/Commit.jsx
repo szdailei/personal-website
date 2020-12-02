@@ -2,33 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Span } from '../styled/index.js';
 import { Section, Header, Main } from '../sectioning/index.js';
+import Details from './Details';
 
 function Commit({ commit, locale }) {
+  function Popup() {
+    return <Details files={commit.files} status={commit.status} />;
+  }
+
   const date = new Date(commit.committerDate);
   const localeDate = `${date.toLocaleDateString(locale)} ${date.toLocaleTimeString(locale)}`;
 
-  const files = commit.files;
-  const status = commit.status;
   const gridTemplateAreas = `
   'header'
   'main'
   `;
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <Section      
-      gridTemplateColumns="1fr"
-      gridTemplateRows="auto auto"
-      gridTemplateAreas={gridTemplateAreas}
-    >
-      <Header width="40%" fontSize="1.2em" display="grid" gridTemplateColumns="9fr 5fr" color='blue'>
-        <Span>{localeDate}</Span>
-        <Span>{commit.authorName}</Span>
+    <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+      <Header
+        width="50%"
+        fontSize="1.2em"
+        display="grid"
+        gridTemplateColumns="1fr 1fr"
+        color="blue"
+        gridColumnGap="40px"
+      >
+        <Span justifySelf="start">{localeDate}</Span>
+        <Span justifySelf="start">{commit.authorName}</Span>
       </Header>
-      <Main display="grid" gridTemplateRows="auto auto">
+      <Main display="grid" gridTemplateRows="auto auto auto">
         <Span fontSize="1.2em" fontWeight="600">
           {commit.subject}
         </Span>
         <Span>{commit.body}</Span>
+        <Popup />
       </Main>
     </Section>
   );

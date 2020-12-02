@@ -21,16 +21,23 @@ function User({ commits, locale }) {
   return (
     <>
       <hr />
-      <Section marginTop="24px" gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+      <Section
+        marginTop="24px"
+        gridTemplateColumns="1fr"
+        gridTemplateRows="auto auto"
+        gridTemplateAreas={gridTemplateAreas}
+      >
         <Header fontSize="1.3em" display="grid" gridTemplateColumns="1fr 1fr 4fr">
           <Span>Committer</Span>
           <Span color="red">{name}</Span>
           <Span color="red">{email}</Span>
         </Header>
         <Main marginLeft="1em" display="grid" gridTemplateRows="auto auto">
-          <Span width="40%" display="grid" gridTemplateColumns="9fr 5fr">
-            <Span justifySelf="center">Commit Date</Span>
-            <Span justifySelf="center">Author</Span>
+          <Span width="50%" display="grid" gridTemplateColumns="1fr 1fr" gridColumnGap="40px">
+            <Span justifySelf="center" marginRight="4em">
+              Commit Date
+            </Span>
+            <Span justifySelf="start">Author</Span>
           </Span>
           <Span>{children}</Span>
         </Main>

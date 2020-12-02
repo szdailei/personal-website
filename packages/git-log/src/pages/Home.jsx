@@ -4,7 +4,6 @@ import makeid from '../lib/makeid.js';
 import { Loaded } from '../components/index.js';
 import { Span } from '../styled/index.js';
 import User from './User';
-import gitLog from '../../reports/git-log.json';
 import { Article, Section, Header, Main } from '../sectioning/index.js';
 
 function Home({ repo, locale, users }) {
