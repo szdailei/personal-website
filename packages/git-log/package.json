@@ -1,0 +1,21 @@
+{
+  "license": "MIT",
+  "private": "true",
+  "name": "@dailei/git-log",
+  "type": "module",
+  "version": "0.1.0",
+  "scripts": {
+    "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
+    "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
+    "prepare": "node src/git-log.js && cp src/index.html reports/",
+    "inline": "yarn html-inline -i reports/index.html -o reports/git-log.html",
+    "build": "yarn prepare && yarn rollup -c rollup.config.git-log.js && yarn inline && rm reports/index.html reports/app.js"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "stream-to-array": "^2.3.0"
+  }
+}
