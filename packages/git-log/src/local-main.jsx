@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Div from './Div'
+import Div from './Div';
 import makeid from './lib/makeid.js';
 import User from './User';
 import gitLog from '../reports/git-log.json';
@@ -8,8 +8,8 @@ import gitLog from '../reports/git-log.json';
 function LocalMain() {
   const users = [];
   const ids = [];
-  gitLog.forEach((commit) => {
-    const id = commit.committer.email;
+  gitLog.data.forEach((commit) => {
+    const id = commit.committerEmail;
     const index = ids.indexOf(id);
     if (index === -1) {
       ids.push(id);
@@ -21,12 +21,18 @@ function LocalMain() {
 
   const children = [];
   users.forEach((user) => {
-    const { name } = user[0].committer;
-    const { email } = user[0].committer;
-    children.push(<User key={makeid()} name={name} email={email} commits={user} />);
+    children.push(<User key={makeid()} commits={user} locale={gitLog.locale} />);
   });
 
-  return <Div margin='36px' fontSize='1.8em'>{children}</Div>;
+  return (
+    <Div>
+      <Div display="flex" flexDirection="row" fontSize="2em">
+        <Div>repo name</Div>
+        <Div marginLeft="1em">{gitLog.repo}</Div>
+      </Div>
+      {children}
+    </Div>
+  );
 }
 
 export default () => {
