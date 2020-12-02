@@ -1,9 +1,9 @@
 /* eslint-disable no-await-in-loop */
 import puppeteer from 'puppeteer-core/lib/esm/puppeteer/node.js';
-import gotoPresentation from './function-test/lib/goto-presentation.js';
-import setFontSizes from './function-test/lib/set-font-sizes.js';
-import exportPdf from './function-test/export-pdf.js';
-import { getLinkByFileName } from './function-test/lib/eval-presentation.js';
+import gotoPresentation from './lib/goto-presentation.js';
+import setFontSizes from './lib/set-font-sizes.js';
+import pdf from './lib/pdf.js';
+import { getLinkByFileName } from './lib/eval-presentation.js';
 import config from './config.js';
 
 (async () => {
@@ -28,7 +28,7 @@ import config from './config.js';
       path: `${config.PDFS_DIR}${fileNames[i]}.pdf`,
       ...config.VIEWPORT,
     };
-    await exportPdf(page, options);
+    await pdf(page, options);
 
     await page.goBack();
     await page.waitForSelector(config.LOADED_ID);

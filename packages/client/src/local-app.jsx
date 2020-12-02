@@ -2,10 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Presentation from './presentation/Presentation';
 
-function LocalMain() {
+function App() {
   return <Presentation />;
 }
 
-export default () => {
-  ReactDOM.render(<LocalMain />, document.getElementById('root'));
-};
+ReactDOM.render(<App />, document.getElementById('root'));

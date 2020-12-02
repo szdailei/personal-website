@@ -20,7 +20,12 @@ const config = {
   ],
   plugins: [
     resolve({ extensions: ['.mjs', '.js', '.jsx', '.json', 'md'], preferBuiltins: false }),
-    babel({ babelHelpers: 'bundled', presets: ['@babel/preset-react'], include: 'src/**' }),
+    babel({
+      babelHelpers: 'bundled',
+      presets: ['@babel/preset-react'],
+      include: ['../**/src/**'],
+      extensions: ['.jsx', '.tsx'],
+    }),
     replace({ 'process.env.NODE_ENV': JSON.stringify(mode) }),
     commonjs(),
     external(),
@@ -31,4 +36,4 @@ const config = {
   ],
 };
 
-export default config
+export default config;

@@ -1,6 +1,6 @@
 import puppeteer from 'puppeteer-core';
-import gotoPresentation from './lib/goto-presentation.js';
-import setFontSizes from './lib/set-font-sizes.js';
+import gotoPresentation from '../lib/goto-presentation.js';
+import setFontSizes from '../lib/set-font-sizes.js';
 import setTitle from './set-title.js';
 import forwardBackward from './forward-backward.js';
 import exportPdf from './export-pdf.js';
@@ -49,7 +49,7 @@ const exportPdfReq = `@pain
 describe(exportPdfReq, () => {
   const exportPdfStepsReq = `按动KeyA键，切换到显示所有页。用puppeteer生成pdf文件。
   PDF文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
-  test(
+  test.skip(
     exportPdfStepsReq,
     async () => {
       await setFontSizes(page, 19);

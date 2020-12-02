@@ -9,7 +9,7 @@
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
     "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
     "clean": "rimraf dist && mkdirp dist",
-    "prepare": "yarn clean && node ../../modify-puppeteer.js",
+    "prepare": "yarn clean && node ../../puppeteer-support-esm.js",
     "dev": "yarn prepare && NODE_ENV=development nodemon src/index.js",
     "build": "yarn prepare && cp .env* dist/ && yarn rollup -c ../../rollup.config.js",
     "start": "node dist/index.js"

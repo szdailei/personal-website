@@ -16,8 +16,7 @@ function User({ commits, locale }) {
 
   const gridTemplateAreas = `
   'header'
-  'main'
-  `;
+  'main'`;
   return (
     <>
       <hr />
@@ -27,17 +26,15 @@ function User({ commits, locale }) {
         gridTemplateRows="auto auto"
         gridTemplateAreas={gridTemplateAreas}
       >
-        <Header fontSize="1.3em" display="grid" gridTemplateColumns="1fr 1fr 4fr">
+        <Header fontSize="1.2em" display="grid" gridTemplateColumns="1fr 1fr 4fr">
           <Span>Committer</Span>
           <Span color="red">{name}</Span>
           <Span color="red">{email}</Span>
         </Header>
         <Main marginLeft="1em" display="grid" gridTemplateRows="auto auto">
-          <Span width="50%" display="grid" gridTemplateColumns="1fr 1fr" gridColumnGap="40px">
-            <Span justifySelf="center" marginRight="4em">
-              Commit Date
-            </Span>
-            <Span justifySelf="start">Author</Span>
+          <Span width="70%" display="grid" gridTemplateColumns="1fr 1fr" gridColumnGap="40px">
+            <Span>Commit Date</Span>
+            <Span>Author</Span>
           </Span>
           <Span>{children}</Span>
         </Main>

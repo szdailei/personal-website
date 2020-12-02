@@ -15,7 +15,7 @@ import {
 } from './lib/path';
 import Presentation from './presentation/Presentation';
 
-function Main() {
+function App() {
   const { ready, error } = useRemoteConfig();
   if (error) return <Error error={error} />;
   if (!ready) return <Loading />;
@@ -37,6 +37,4 @@ function Main() {
   );
 }
 
-export default () => {
-  ReactDOM.render(<Main />, document.getElementById('root'));
-};
+ReactDOM.render(<App />, document.getElementById('root'));

@@ -1,6 +1,6 @@
-import expect from 'expect';
-import { getTotalPagesNum } from './lib/eval-presentation.js';
-import getPdfInfo from './lib/pdf-info.js';
+import { getTotalPagesNum } from '../lib/eval-presentation.js';
+import getPdfInfo from '../lib/pdf-info.js';
+import pdf from '../lib/pdf.js';
 
 function getTestedFileName(pdfPath) {
   const tokens = pdfPath.split('/');
@@ -25,10 +25,9 @@ function getExpectPdfPages(fileName, totalPages) {
 }
 
 async function exportPdf(page, options) {
-  const totalPagesNum = await getTotalPagesNum(page);
-  await page.keyboard.down('KeyA'); // switch to all pages mode.
-  await page.pdf(options);
+  await pdf(page, options);
 
+  const totalPagesNum = await getTotalPagesNum(page);
   const info = await getPdfInfo(options.path);
   const testedFileName = getTestedFileName(options.path);
   expect(info.pageCount).toBe(getExpectPdfPages(testedFileName, totalPagesNum));

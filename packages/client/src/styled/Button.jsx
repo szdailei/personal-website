@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { ThemeContext } from '@emotion/core';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/dist/styled.esm.js';
 
 function Button({ onClick, value, children, testId, ...props }) {
   const theme = useContext(ThemeContext);

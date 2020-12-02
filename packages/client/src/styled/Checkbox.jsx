@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled';
+import styled from '@emotion/styled/dist/styled.esm.js';
 import Div from './Div';
 import FlexContainer from './FlexContainer';
 import GridContainer from './GridContainer';

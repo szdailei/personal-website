@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import marked from 'marked';
 import { i18n, t } from '../i18n';
 import makeid from '../lib/makeid';
-import { GridContainer, Div, Span, Option, Select } from '../styled';
+import { Div, Span, Option, Select } from '../styled';
 import { Article, Section, Header, Main } from '../sectioning';
 import { Loaded } from '../components';
 import awesome from '../awesome.md';
@@ -63,11 +63,6 @@ function parseMarkdown(markdown) {
   return result;
 }
 
-function Body() {
-  const result = parseMarkdown(awesome);
-  return <Div>{result}</Div>;
-}
-
 function Home() {
   const [refresh, setRefresh] = useState(false);
   function changeCurrentLocale(event) {
@@ -86,6 +81,8 @@ function Home() {
     return <Select onChange={changeCurrentLocale} options={options} />;
   }
 
+  const body = parseMarkdown(awesome);
+
   const gridTemplateAreas = `
     'header'
     'main'
@@ -95,20 +92,16 @@ function Home() {
     <Loaded>
       <Article>
         <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-          <Header>
-            <GridContainer gridTemplateColumns="2fr 2fr 2fr 2fr 2fr 2fr 1fr">
-              <Link to="/">{t('home:title')}</Link>
-              <Div>{t('home:blog')}</Div>
-              <Link to="/resume">{t('home:aboutMe')}</Link>
-              <Link to="/courses">{t('home:courses')}</Link>
-              <Link to="/admin">{t('home:admin')}</Link>
-              <Link to="/sign-in">{t('home:sign-in')}</Link>
-              <LangSelect />
-            </GridContainer>
+          <Header display="grid" gridTemplateColumns="2fr 2fr 2fr 2fr 2fr 2fr 1fr">
+            <Link to="/">{t('home:title')}</Link>
+            <Div>{t('home:blog')}</Div>
+            <Link to="/resume">{t('home:aboutMe')}</Link>
+            <Link to="/courses">{t('home:courses')}</Link>
+            <Link to="/admin">{t('home:admin')}</Link>
+            <Link to="/sign-in">{t('home:sign-in')}</Link>
+            <LangSelect />
           </Header>
-          <Main>
-            <Body />
-          </Main>
+          <Main>{body}</Main>
         </Section>
       </Article>
     </Loaded>

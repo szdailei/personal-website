@@ -1,5 +1,5 @@
 import puppeteer from 'puppeteer-core';
-import gotoPresentation from './lib/goto-presentation.js';
+import gotoPresentation from '../lib/goto-presentation.js';
 import switchFullScreen from './switch-full-screen.js';
 import config from '../config.js';
 

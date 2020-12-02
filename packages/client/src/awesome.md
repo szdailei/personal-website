@@ -95,6 +95,7 @@
 - [prettier](https://github.com/prettier/prettier) - an opinionated code formatter
 - [eslint](https://www.npmjs.com/package/eslint) - A fully pluggable tool for identifying and reporting on patterns in JavaScript
 - [rollup](https://github.com/rollup/rollup) - ES module bundler.
+- [terser](https://github.com/terser/terser) - A JavaScript parser and mangler/compressor toolkit for ES6+.
 - [html-inline](https://github.com/substack/html-inline) - inline javascript, stylesheets, and images from an html page.
 - [nodemon](https://github.com/remy/nodemon) - Monitor for any changes in your node.js application and automatically restart the server.
 - [OptiPNG](http://optipng.sourceforge.net/) - PNG optimizer that recompresses image files to a smaller size, without losing any information.

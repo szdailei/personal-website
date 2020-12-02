@@ -14,29 +14,31 @@ function Commit({ commit, locale }) {
 
   const gridTemplateAreas = `
   'header'
-  'main'
-  `;
+  'main'`;
   return (
-    <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-      <Header
-        width="50%"
-        fontSize="1.2em"
-        display="grid"
-        gridTemplateColumns="1fr 1fr"
-        color="blue"
-        gridColumnGap="40px"
-      >
-        <Span justifySelf="start">{localeDate}</Span>
-        <Span justifySelf="start">{commit.authorName}</Span>
-      </Header>
-      <Main display="grid" gridTemplateRows="auto auto auto">
-        <Span fontSize="1.2em" fontWeight="600">
-          {commit.subject}
-        </Span>
-        <Span>{commit.body}</Span>
-        <Popup />
-      </Main>
-    </Section>
+    <>
+      <hr />
+      <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+        <Header
+          width="70%"
+          fontSize="1.1em"
+          display="grid"
+          gridTemplateColumns="1fr 1fr"
+          color="blue"
+          gridColumnGap="40px"
+        >
+          <Span>{localeDate}</Span>
+          <Span>{commit.authorName}</Span>
+        </Header>
+        <Main display="grid" gridTemplateRows="auto auto auto">
+          <Span fontSize="1.1em" fontWeight="500">
+            {commit.subject}
+          </Span>
+          <Span>{commit.body}</Span>
+          <Popup />
+        </Main>
+      </Section>
+    </>
   );
 }
 
