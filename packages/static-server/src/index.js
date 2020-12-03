@@ -1,8 +1,8 @@
-import init from './init.js';
+import loadEnv from '../../../load-env.js';
 import staticServer from './static-server.js';
 
 (async () => {
-  await init();
+  await loadEnv();
 
   staticServer(process.env.PORT, process.env.WWW);
   // eslint-disable-next-line no-console
