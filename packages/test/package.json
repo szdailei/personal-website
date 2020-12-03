@@ -11,23 +11,16 @@
     "prepare": "node ../../puppeteer-support-esm.js",
     "export": "node src/export-all-pdfs.js",
     "load-test": "node src/load-test/load-test.js",
-    "test": "jest",
-    "copy:gitlog": "cp -r src/git-log/index.html dist/",
-    "inline": "yarn html-inline -i dist/index.html -o reports/git-log.html && rimraf dist/*",
-    "build:gitlog": "yarn clean && node src/git-log/git-log.js && yarn copy:gitlog && yarn rollup -c rollup.config.gitlog.js && yarn inline"
+    "test": "jest && chromium reports/jest_html_reporters.html"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.1",
     "babel-jest": "^26.6.3",
     "cli-table": "^0.3.1",
-    "git-log-parser": "^1.2.0",
     "jest": "^26.6.3",
     "jest-html-reporters": "^2.1.1",
     "minimist": "^1.2.5",
     "pdf-lib": "^1.12.0",
-    "puppeteer-core": "^5.4.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "stream-to-array": "^2.3.0"
+    "puppeteer-core": "^5.4.1"
   }
 }

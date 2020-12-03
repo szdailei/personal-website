@@ -39,17 +39,17 @@ describe(presentationReq, () => {
 });
 
 const exportPdfReq = `@pain
-20200601，代磊将PPT导出为PDF时，纸张大小不可调、阅读不方便。
+20200601，代磊将ppt导出为pdf时，纸张大小不可调、阅读不方便。
 @expect
-20201111，代磊将md导出PDF时，将要设置适合屏幕阅读的宽度和高度。
+20201111，代磊将md导出pdf时，将要设置适合屏幕阅读的宽度和高度。
 @status
-20200601，写作ppt时已经设置了纸张大小，PowerPoint按照预定义纸张大小导出PDF。
+20200601，写作ppt时已经设置了纸张大小，PowerPoint按照预定义纸张大小导出pdf。
 @goal
-20201111，在http://127.0.0.1上，md文件不设置纸张大小，软件生成PDF时将要设置纸张和字体大小。`;
+20201111，在http://127.0.0.1上，md文件不设置纸张大小，软件导出pdf时将要设置纸张和字体大小。`;
 describe(exportPdfReq, () => {
   const exportPdfStepsReq = `按动KeyA键，切换到显示所有页。用puppeteer生成pdf文件。
-  PDF文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
-  test.skip(
+pdf文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
+  test(
     exportPdfStepsReq,
     async () => {
       await setFontSizes(page, 19);
@@ -59,7 +59,7 @@ describe(exportPdfReq, () => {
       };
       await exportPdf(page, options);
     },
-    10000
+    8000
   );
 });
 

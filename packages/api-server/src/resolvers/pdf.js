@@ -2,7 +2,7 @@ import puppeteer from 'puppeteer-core/lib/esm/puppeteer/node.js';
 import storage from '../lib/storage.js';
 
 async function generatePdf(htmlPageUrl, accpetLanguage) {
-  const LOADED_TAG=  'article'
+  const LOADED_TAG = 'article';
 
   const browser = await puppeteer.launch({
     headless: true,
