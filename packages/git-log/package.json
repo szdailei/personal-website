@@ -7,6 +7,7 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
     "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
+    "stylelint": "stylelint  \"src/**/*.{jsx,tsx}\"",
     "prepare": "node src/git-log.js && cp src/index.html reports/",
     "inline": "yarn html-inline -i reports/index.html -o reports/git-log.html",
     "build": "yarn prepare && yarn rollup -c rollup.config.git-log.js && yarn inline && rm reports/index.html reports/app.js"

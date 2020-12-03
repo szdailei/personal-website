@@ -4,7 +4,7 @@ import makeid from '../lib/makeid';
 import { request, useRemoteData } from '../lib/network';
 import { FlexContainer, GridContainer, StyledContainer, Div, Button, Option, Select } from '../styled';
 import { Article } from '../sectioning';
-import { Error, Loaded } from '../components';
+import { Error } from '../components';
 import ChangePassword from './ChangePassword';
 import SignUp from './SignUp';
 
@@ -160,16 +160,14 @@ function Admin() {
   }
 
   return (
-    <Loaded>
-      <Article>
-        <FlexContainer>
-          <Status msg={message} />
-          <SignUp callback={callback} />
-          <RolePermissions roles={data.getRoles} permissions={data.getPermissions} />
-          <Users callback={callback} onModal={setUsername} users={data.getUsers} roles={data.getRoles} />
-        </FlexContainer>
-      </Article>
-    </Loaded>
+    <Article>
+      <FlexContainer>
+        <Status msg={message} />
+        <SignUp callback={callback} />
+        <RolePermissions roles={data.getRoles} permissions={data.getPermissions} />
+        <Users callback={callback} onModal={setUsername} users={data.getUsers} roles={data.getRoles} />
+      </FlexContainer>
+    </Article>
   );
 }
 

@@ -7,6 +7,7 @@
   "scripts": {
     "format": "prettier --write \"src/**/*.{js,ts,jsx,tsx,mjs,json}\"",
     "eslint": "eslint  --cache \"src/**/*.{js,ts,jsx,tsx,mjs}\"",
+    "stylelint": "stylelint  \"src/**/*.{jsx,tsx}\"",
     "clean": "rimraf dist && mkdirp dist dist/www dist/local dist/local/courses/images dist/local/courses/videos",
     "copy:www": "cp -r public/* dist/www/",
     "copy:local": "mkdirp dist/local/tmp && cp -r public/* dist/local/tmp",

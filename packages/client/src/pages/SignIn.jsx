@@ -4,7 +4,6 @@ import { request } from '../lib/network';
 import { storageWebToken } from '../lib/security';
 import { FlexContainer, GridContainer, Div, Button, Input } from '../styled';
 import { Article } from '../sectioning';
-import { Loaded } from '../components';
 
 function SignIn() {
   const navigate = useNavigate();
@@ -38,31 +37,29 @@ function SignIn() {
   }
 
   return (
-    <Loaded>
-      <Article>
-        <FlexContainer>
-          <Div textAlign="center">{serverResponse}</Div>
-          <GridContainer gridTemplateColumns="3fr  3fr 3fr" marginTop="2em">
-            <Div textAlign="right" marginRight="1em" fontSize="1.5em">
-              Username
-            </Div>
-            <Input onChange={inputUsername} fontSize="1.5em" placeholder="Username" />
-          </GridContainer>
-          <GridContainer gridTemplateColumns="3fr  3fr 3fr" marginTop="2em">
-            <Div textAlign="right" marginRight="1em" fontSize="1.5em">
-              Password
-            </Div>
-            <Input onChange={inputPassword} fontSize="1.5em" placeholder="Password" />
-          </GridContainer>
-          <GridContainer gridTemplateColumns="1fr 1fr" marginTop="2em">
-            <Button onClick={signIn} marginLeft="auto" marginRight="4em">
-              Sign In
-            </Button>
-            <Button onClick={cancel}>Cancel</Button>
-          </GridContainer>
-        </FlexContainer>
-      </Article>
-    </Loaded>
+    <Article>
+      <FlexContainer>
+        <Div textAlign="center">{serverResponse}</Div>
+        <GridContainer gridTemplateColumns="3fr  3fr 3fr" marginTop="2em">
+          <Div textAlign="right" marginRight="1em" fontSize="1.5em">
+            Username
+          </Div>
+          <Input onChange={inputUsername} fontSize="1.5em" placeholder="Username" />
+        </GridContainer>
+        <GridContainer gridTemplateColumns="3fr  3fr 3fr" marginTop="2em">
+          <Div textAlign="right" marginRight="1em" fontSize="1.5em">
+            Password
+          </Div>
+          <Input onChange={inputPassword} fontSize="1.5em" placeholder="Password" />
+        </GridContainer>
+        <GridContainer gridTemplateColumns="1fr 1fr" marginTop="2em">
+          <Button onClick={signIn} marginLeft="auto" marginRight="4em">
+            Sign In
+          </Button>
+          <Button onClick={cancel}>Cancel</Button>
+        </GridContainer>
+      </FlexContainer>
+    </Article>
   );
 }
 

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Loaded } from '../components';
 import { Article } from '../sectioning';
 
 function toggleFullScreen() {
@@ -79,11 +78,7 @@ function Pages({ data }) {
   }, [onKeyDown]);
 
   const showData = isAllPages ? data : data[currentPageCount];
-  return (
-    <Loaded>
-      <Article fontSize="1.8em">{showData}</Article>
-    </Loaded>
-  );
+  return <Article fontSize="1.8em">{showData}</Article>;
 }
 
 Pages.propTypes = {

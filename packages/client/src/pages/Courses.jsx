@@ -4,7 +4,7 @@ import { useRemoteData } from '../lib/network';
 import { PRESENTATION_PATH } from '../lib/path';
 import { StyledContainer } from '../styled';
 import { Article, Header, Main, Section } from '../sectioning';
-import { Error, Loaded } from '../components';
+import { Error } from '../components';
 
 function Courses() {
   const query = '{getCourses}';
@@ -29,14 +29,12 @@ function Courses() {
   'main'
   `;
   return (
-    <Loaded>
-      <Article>
-        <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-          <Header>Courses List</Header>
-          <Main marginTop="1em">{children}</Main>
-        </Section>
-      </Article>
-    </Loaded>
+    <Article>
+      <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+        <Header>Courses List</Header>
+        <Main marginTop="1em">{children}</Main>
+      </Section>
+    </Article>
   );
 }
 

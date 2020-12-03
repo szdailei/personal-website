@@ -8,6 +8,7 @@
   "scripts": {
     "format": "yarn workspaces run format",
     "eslint": "yarn workspaces run eslint",
+    "stylelint": "yarn workspace @dailei/client stylelint && yarn workspace @dailei/git-log stylelint",
     "clean:static": "yarn workspace @dailei/static-server clean",
     "clean:api": "yarn workspace @dailei/api-server clean",
     "clean:gateway": "yarn workspace @dailei/api-gateway clean",
@@ -27,6 +28,9 @@
     "start:api": "yarn workspace @dailei/api-server start",
     "start:gateway": "yarn workspace @dailei/api-gateway start",
     "start": "yarn start:static & yarn start:api & yarn start:gateway"
+  },
+  "dependencies": {
+    "dotenv-defaults": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -52,14 +56,14 @@
     "rimraf": "^3.0.2",
     "rollup": "^2.34.0",
     "rollup-plugin-node-externals": "^2.2.0",
-    "rollup-plugin-string": "^3.0.0"
+    "rollup-plugin-string": "^3.0.0",
+    "stylelint": "13.3.3",
+    "stylelint-config-recess-order": "^2.3.0",
+    "stylelint-config-standard": "^20.0.0"
   },
   "prettier": {
     "printWidth": 120,
     "semi": true,
     "singleQuote": true
-  },
-  "dependencies": {
-    "dotenv-defaults": "^2.0.1"
   }
 }

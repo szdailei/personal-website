@@ -7,10 +7,9 @@ import styled from '@emotion/styled/dist/styled.esm.js';
 <Article>{data}</Article>
 */
 function Article({ children, ...props }) {
-  const fontFamily =
-    '"Noto Serif","Times New Roman", "Noto Color Emoji","Font Awesome 5 Free","Noto Serif CJK SC","PingFang SC",”Microsoft Yahei“, "sans-serif"';
   const objStyles = {
-    fontFamily,
+    fontFamily:
+      '"Noto Serif","Times New Roman", "Noto Color Emoji","Font Awesome 5 Free","Noto Serif CJK SC","PingFang SC","Microsoft Yahei",serif',
     letterSpacing: '1px',
     margin: '0',
     ...props,

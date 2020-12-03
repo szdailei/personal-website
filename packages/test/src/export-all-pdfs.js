@@ -16,12 +16,12 @@ import config from './config.js';
   const { page } = result;
   const { fileNames } = result;
   await page.goBack();
-  await page.waitForSelector(config.LOADED_ID);
+  await page.waitForSelector(config.LOADED_TAG);
 
   for (let i = 0; i < fileNames.length; i += 1) {
     const link = await getLinkByFileName(page, fileNames[i]);
     await link.click();
-    await page.waitForSelector(config.LOADED_ID);
+    await page.waitForSelector(config.LOADED_TAG);
 
     await setFontSizes(page, 19);
     const options = {
@@ -31,7 +31,7 @@ import config from './config.js';
     await pdf(page, options);
 
     await page.goBack();
-    await page.waitForSelector(config.LOADED_ID);
+    await page.waitForSelector(config.LOADED_TAG);
   }
   await browser.close();
 })();

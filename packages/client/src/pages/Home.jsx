@@ -5,7 +5,6 @@ import { i18n, t } from '../i18n';
 import makeid from '../lib/makeid';
 import { Div, Span, Option, Select } from '../styled';
 import { Article, Section, Header, Main } from '../sectioning';
-import { Loaded } from '../components';
 import awesome from '../awesome.md';
 
 function createHeading(node) {
@@ -87,24 +86,21 @@ function Home() {
     'header'
     'main'
     `;
-
   return (
-    <Loaded>
-      <Article>
-        <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-          <Header display="grid" gridTemplateColumns="2fr 2fr 2fr 2fr 2fr 2fr 1fr">
-            <Link to="/">{t('home:title')}</Link>
-            <Div>{t('home:blog')}</Div>
-            <Link to="/resume">{t('home:aboutMe')}</Link>
-            <Link to="/courses">{t('home:courses')}</Link>
-            <Link to="/admin">{t('home:admin')}</Link>
-            <Link to="/sign-in">{t('home:sign-in')}</Link>
-            <LangSelect />
-          </Header>
-          <Main>{body}</Main>
-        </Section>
-      </Article>
-    </Loaded>
+    <Article>
+      <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+        <Header display="grid" gridTemplateColumns="2fr 2fr 2fr 2fr 2fr 2fr 1fr">
+          <Link to="/">{t('home:title')}</Link>
+          <Div>{t('home:blog')}</Div>
+          <Link to="/resume">{t('home:aboutMe')}</Link>
+          <Link to="/courses">{t('home:courses')}</Link>
+          <Link to="/admin">{t('home:admin')}</Link>
+          <Link to="/sign-in">{t('home:sign-in')}</Link>
+          <LangSelect />
+        </Header>
+        <Main>{body}</Main>
+      </Section>
+    </Article>
   );
 }
 

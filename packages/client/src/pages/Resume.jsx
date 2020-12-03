@@ -4,7 +4,7 @@ import makeid from '../lib/makeid';
 import { getDownloadFileUrl, request, useRemoteData } from '../lib/network';
 import { GridContainer, StyledContainer, Abbr, Div, Span } from '../styled';
 import { Article, Header, Main, Section } from '../sectioning';
-import { Error, Loaded } from '../components';
+import { Error } from '../components';
 
 async function gotoPdfUrl() {
   const query = `{pdf(url:"${window.location.href}")}`;
@@ -123,47 +123,45 @@ function Resume() {
 
   const resume = JSON.parse(data.resume);
   return (
-    <Loaded>
-      <Article margin="56px 48px 48px 64px">
-        <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-          <Header fontWeight="500">
-            <GridContainer gridTemplateColumns="2fr 2fr 3fr">
-              <Abbr
-                onClick={gotoPdfUrl}
-                title="GotoPdfUrl"
-                cursor="pointer"
-                fontSize="2em"
-                letterSpacing="0.5em"
-                marginLeft="0"
-              >
-                {resume.name}
-              </Abbr>
-              <Div fontSize="1.2em">{resume.position}</Div>
-              <StyledContainer fontSize="20px">
-                <Div>
-                  <span role="img" aria-labelledby="Send a love letter">
-                    💌
-                  </span>
-                  {resume.contact.email}
-                </Div>
-                <Div>
-                  <span role="img" aria-labelledby="Call me">
-                    🤙
-                  </span>
-                  {resume.contact.phone}
-                </Div>
-              </StyledContainer>
-            </GridContainer>
-          </Header>
-          <Main>
-            <Div textIndent="2.21em">{resume.about}</Div>
-            <Experiences experiences={resume.experiences} />
-            <Educations educations={resume.educations} />
-            <Skills marginLeft="2.2em" skills={resume.skills} />
-          </Main>
-        </Section>
-      </Article>
-    </Loaded>
+    <Article margin="56px 48px 48px 64px">
+      <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
+        <Header fontWeight="500">
+          <GridContainer gridTemplateColumns="2fr 2fr 3fr">
+            <Abbr
+              onClick={gotoPdfUrl}
+              title="GotoPdfUrl"
+              cursor="pointer"
+              fontSize="2em"
+              letterSpacing="0.5em"
+              marginLeft="0"
+            >
+              {resume.name}
+            </Abbr>
+            <Div fontSize="1.2em">{resume.position}</Div>
+            <StyledContainer fontSize="20px">
+              <Div>
+                <span role="img" aria-labelledby="Send a love letter">
+                  💌
+                </span>
+                {resume.contact.email}
+              </Div>
+              <Div>
+                <span role="img" aria-labelledby="Call me">
+                  🤙
+                </span>
+                {resume.contact.phone}
+              </Div>
+            </StyledContainer>
+          </GridContainer>
+        </Header>
+        <Main>
+          <Div textIndent="2.21em">{resume.about}</Div>
+          <Experiences experiences={resume.experiences} />
+          <Educations educations={resume.educations} />
+          <Skills marginLeft="2.2em" skills={resume.skills} />
+        </Main>
+      </Section>
+    </Article>
   );
 }
 

@@ -7,6 +7,7 @@ function StyledContainer({ onClick, children, disabled, ...props }) {
   if (disabled) {
     objStyles = {
       ...props,
+
       cursor: 'not-allowed',
       backgroundColor: 'rgba(0, 0, 0, 0.06)',
       color: 'rgba(0, 0, 0, 0.36)',
