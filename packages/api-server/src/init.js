@@ -1,25 +1,9 @@
-import path from 'path';
 import crypto from 'crypto';
 import postgres from 'postgres';
-import dotenv from 'dotenv-defaults';
-import dirname from '../../../dirname.js';
 import log from './lib/log.js';
 import config from './config.js';
 
 async function init() {
-  const envFileInWorkingDir = path.join(dirname, '.env');
-  const envDefaultsFileInWorkingDir = path.join(dirname, '.env.defaults');
-
-  // load .env and .env.defaults from the directory where the script is running
-  const result = dotenv.config({
-    path: envFileInWorkingDir,
-    defaults: envDefaultsFileInWorkingDir,
-  });
-  if (result.parsed.keys === undefined) {
-    // if no env defined, load from the directory where the script was called
-    dotenv.config();
-  }
-
   config.secretKey = crypto.randomBytes(16).toString('hex');
 
   const options = {

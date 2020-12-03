@@ -1,4 +1,5 @@
 import http from 'http';
+import loadEnv from '../../../load-env.js';
 import init from './init.js';
 import graphqlServer from './graphql-server.js';
 import log from './lib/log.js';
@@ -6,6 +7,7 @@ import storage from './lib/storage.js';
 import staticServer from '../../static-server/src/static-server.js';
 
 (async () => {
+  await loadEnv();
   await init();
 
   http.createServer(graphqlServer).listen(process.env.API_SERVER_PORT);
