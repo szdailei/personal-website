@@ -22,7 +22,7 @@ const config = {
     resolve({ extensions: ['.mjs', '.js', '.jsx', '.json', 'md'], preferBuiltins: false }),
     babel({
       babelHelpers: 'bundled',
-      presets: ['@babel/preset-react'],
+      presets: [['@babel/preset-env', { targets: { chrome: 86 } }], '@babel/preset-react'],
       include: ['../**/src/**'],
       extensions: ['.jsx', '.tsx'],
     }),

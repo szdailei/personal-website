@@ -17,7 +17,8 @@
     "inline": "yarn html-inline -i dist/local/tmp/index.html -o dist/local/local-presentation.html && rimraf dist/local/tmp",
     "build:www": "yarn copy:www && yarn rollup -c rollup.config.www.js",
     "build:local": "yarn copy:local && yarn rollup -c rollup.config.local.js && yarn inline && yarn copy:images && yarn copy:videos",
-    "build": "yarn clean && yarn build:www && yarn build:local"
+    "build:debug": "yarn rollup -c rollup.config.debug.js && cp src/__debug__/test.md dist",
+    "build": "yarn clean && yarn build:www && yarn build:local"    
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
