@@ -31,18 +31,18 @@ CheckboxWithoutLabel.propTypes = {
 
 /**
 @example
-function CheckboxWithState({ checked, ...props }) {
+function CheckboxWithState({ checked, ...styles }) {
   const [state, setState] = useState(checked);
   function clickCheckbox() {
     setState(!state);
   }
-  return <Checkbox checked={state} onClick={clickCheckbox} {...props} />;
+  return <Checkbox checked={state} onClick={clickCheckbox} {...styles} />;
 }
 */
-function Checkbox({ checked, gridTemplateColumns, height, label, onClick, right, ...props }) {
+function Checkbox({ checked, gridTemplateColumns, height, label, onClick, right, ...styles }) {
   const objStyles = {
     fontSize: height,
-    ...props,
+    ...styles,
   };
   const StyledDiv = styled.div(objStyles);
 

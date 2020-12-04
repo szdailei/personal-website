@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Title({ children, ...props }) {
+function Title({ children, ...styles }) {
   document.title = children;
 
   const containerStyles = {
@@ -14,7 +14,7 @@ function Title({ children, ...props }) {
   const itemStyles = {
     fontSize: '3em',
     fontWeight: '700',
-    ...props,
+    ...styles,
   };
   const StyledContainer = styled.div(containerStyles);
   const StyledItem = styled.div(itemStyles);

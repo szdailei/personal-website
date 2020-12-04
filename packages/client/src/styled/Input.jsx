@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Input({ type, accept, onChange, placeholder, ...props }) {
+function Input({ type, accept, onChange, placeholder, ...styles }) {
   const objStyles = {
     cursor: 'text',
     outline: 0,
     borderStyle: 'none none solid none',
-    ...props,
+    ...styles,
   };
   const StyledInput = styled.input(objStyles);
   return <StyledInput type={type} accept={accept} onChange={onChange} placeholder={placeholder} />;

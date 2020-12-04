@@ -15,10 +15,10 @@ const gridTemplateAreas = `
     <Footer>{footerData}</Footer>
 </Section>
 */
-function Section({ children, ...props }) {
+function Section({ children, ...styles }) {
   const objStyles = {
     display: 'grid',
-    ...props,
+    ...styles,
   };
   const StyledSection = styled.section(objStyles);
   return <StyledSection>{children}</StyledSection>;

@@ -7,12 +7,12 @@ import makeid from '../lib/makeid';
 import { getTextFromChildren } from './parse-react-component-utils';
 import Split from '../layout/Split';
 
-function CheckboxWithState({ checked, ...props }) {
+function CheckboxWithState({ checked, ...styles }) {
   const [state, setState] = useState(checked);
   function clickCheckbox() {
     setState(!state);
   }
-  return <Checkbox checked={state} onClick={clickCheckbox} {...props} />;
+  return <Checkbox checked={state} onClick={clickCheckbox} {...styles} />;
 }
 
 CheckboxWithState.propTypes = {

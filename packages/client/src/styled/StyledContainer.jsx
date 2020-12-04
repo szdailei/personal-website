@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function StyledContainer({ onClick, children, disabled, ...props }) {
+function StyledContainer({ onClick, children, disabled, ...styles }) {
   let objStyles;
   if (disabled) {
     objStyles = {
-      ...props,
+      ...styles,
 
       cursor: 'not-allowed',
       backgroundColor: 'rgba(0, 0, 0, 0.06)',
@@ -14,7 +14,7 @@ function StyledContainer({ onClick, children, disabled, ...props }) {
       opacity: '0.5',
     };
   } else {
-    objStyles = { ...props };
+    objStyles = { ...styles };
   }
   const StyledDiv = styled.div(objStyles);
   return <StyledDiv onClick={onClick}>{children}</StyledDiv>;

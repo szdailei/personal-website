@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Split({ children, leftWidth, rightWidth, right, ...props }) {
+function Split({ children, leftWidth, rightWidth, right, ...styles }) {
   const [first, ...rest] = React.Children.toArray(children);
 
   const containerStyles = {
     display: 'flex',
-    ...props,
+    ...styles,
   };
 
   const leftItemStyles = {

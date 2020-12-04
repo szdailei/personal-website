@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Span({ children, ...props }) {
-  const StyledSpan = styled.span(props);
+function Span({ children, ...styles }) {
+  const StyledSpan = styled.span(styles);
   return <StyledSpan>{children}</StyledSpan>;
 }
 

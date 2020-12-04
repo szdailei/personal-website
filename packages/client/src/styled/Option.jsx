@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Option({ value, label, ...props }) {
+function Option({ value, label, ...styles }) {
   const objStyles = {
-    ...props,
+    ...styles,
   };
   const StyledOption = styled.option(objStyles);
   return <StyledOption value={value}>{label}</StyledOption>;

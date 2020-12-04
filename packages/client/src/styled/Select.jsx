@@ -12,9 +12,9 @@ roles.forEach((role, key) => {
 });
 <Select onChange={selectRole} options={options} />
 */
-function Select({ onChange, options, ...props }) {
+function Select({ onChange, options, ...styles }) {
   const objStyles = {
-    ...props,
+    ...styles,
   };
   const StyledSelect = styled.select(objStyles);
   return <StyledSelect onChange={onChange}>{options}</StyledSelect>;

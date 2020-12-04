@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Header({ children, ...props }) {
+function Header({ children, ...styles }) {
   const objStyles = {
     gridArea: 'header',
     marginBottom: '0.4em',
     fontSize: '1.4em',
     fontWeight: '700',
-    ...props,
+    ...styles,
   };
   const StyledHeader = styled.header(objStyles);
   return <StyledHeader>{children}</StyledHeader>;

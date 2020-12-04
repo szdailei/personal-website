@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 
-function Button({ onClick, value, children, ...props }) {
+function Button({ onClick, value, children, ...styles }) {
   const RIPPLE_STYLE = {
     position: 'relative',
     overflow: 'hidden',
@@ -42,7 +42,7 @@ function Button({ onClick, value, children, ...props }) {
         '0 0 2px -2px rgba(29, 39, 231, 0.1), 0 0 3px 0 rgba(29, 39, 231, 0.1), 0 0 5px 0 rgba(29, 39, 231, 0.1), 0 2px 2px -4px rgba(29, 39, 231, 0.1), 0 4px 8px 0 rgba(29, 39, 231, 0.1), 0 2px 15px 0 rgba(29, 39, 231, 0.1)',
     },
     ...RIPPLE_STYLE,
-    ...props,
+    ...styles,
   };
 
   const StyledDiv = styled.div(objStyles);

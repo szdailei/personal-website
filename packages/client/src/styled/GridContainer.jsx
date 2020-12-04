@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function GridContainer({ gridTemplateColumns, children, ...props }) {
+function GridContainer({ gridTemplateColumns, children, ...styles }) {
   const objStyles = {
     display: 'grid',
     alignItems: 'center',
     gridTemplateColumns,
-    ...props,
+    ...styles,
   };
   const StyledDiv = styled.div(objStyles);
   return <StyledDiv>{children}</StyledDiv>;

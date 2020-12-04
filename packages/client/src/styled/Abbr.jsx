@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
-function Abbr({ onClick, title, children, ...props }) {
+function Abbr({ onClick, title, children, ...styles }) {
   const objStyles = {
     textDecoration: 'none',
-    ...props,
+    ...styles,
   };
   const StyledAbbr = styled.abbr(objStyles);
   return (
