@@ -1,6 +1,6 @@
 import React from 'react';
-import makeid from '../lib/makeid';
-import { Section, Main, Footer } from '../sectioning';
+import makeid from '../lib/makeid.js';
+import { Section, Main, Footer } from '../sectioning/index.js';
 
 function createFooter(ctx) {
   const text = `page ${ctx.currentPageNum} / ${ctx.totalPagesNum}`;

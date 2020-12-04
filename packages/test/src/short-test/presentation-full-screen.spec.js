@@ -17,7 +17,7 @@ describe(presentationFullScreenReq, () => {
 beforeAll(async () => {
   browser = await puppeteer.launch({
     headless: false,
-    executablePath: config.PUPPETEER_EXECUTABLE_PATH,
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
   });
 
   const result = await gotoPresentation(browser, config);

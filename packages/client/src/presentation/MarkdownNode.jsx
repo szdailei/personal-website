@@ -1,9 +1,9 @@
 import React from 'react';
-import makeid from '../lib/makeid';
-import { convertSrcToLocal, convertSrcToServer, removeBlankLine, trim } from '../lib/markdown';
-import { Div, Heading } from '../styled';
-import { isReactComponent } from './parse-react-component-utils';
-import HtmlNode from './HtmlNode';
+import makeid from '../lib/makeid.js';
+import { convertSrcToLocal, convertSrcToServer, removeBlankLine, trim } from '../lib/markdown.js';
+import { Div, Heading } from '../styled/index.js';
+import { isReactComponent } from './parse-react-component-utils.js';
+import HtmlNode from './HtmlNode.jsx';
 
 function MarkdownNode(token, children) {
   let node;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { Article } from '../sectioning';
+import { Article } from '../sectioning/index.js';
 
 function toggleFullScreen() {
   if (!document.fullscreenElement) {

@@ -1,11 +1,11 @@
 import marked from 'marked';
-import { trim } from '../lib/markdown';
-import { isStartingTag, isClosingTagAtBeginning, parseTextExceptTheFirstTag } from './parse-react-component-utils';
-import recursiveParseMarkedToken from './recursive-parse-marked-token';
-import finishReactComponent from './finish-react-component';
-import startReactCompenent from './start-react-component';
-import { getCurrentNode } from './tree';
-import Page from './Page';
+import { trim } from '../lib/markdown.js';
+import { isStartingTag, isClosingTagAtBeginning, parseTextExceptTheFirstTag } from './parse-react-component-utils.js';
+import recursiveParseMarkedToken from './recursive-parse-marked-token.js';
+import finishReactComponent from './finish-react-component.js';
+import startReactCompenent from './start-react-component.js';
+import { getCurrentNode } from './tree.js';
+import Page from './Page.jsx';
 
 function fixBugs(tokens) {
   tokens.forEach((token) => {

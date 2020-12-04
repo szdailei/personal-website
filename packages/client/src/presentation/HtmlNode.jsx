@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import makeid from '../lib/makeid';
-import { Div } from '../styled';
-import { convertSrcToLocal, convertSrcToServer, trim } from '../lib/markdown';
+import makeid from '../lib/makeid.js';
+import { Div } from '../styled/index.js';
+import { convertSrcToLocal, convertSrcToServer, trim } from '../lib/markdown.js';
 
 function camelCase(name) {
   let camelName = name;

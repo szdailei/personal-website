@@ -1,6 +1,6 @@
-import { trim } from '../lib/markdown';
-import MarkdownNode from './MarkdownNode';
-import { isStartingTag } from './parse-react-component-utils';
+import { trim } from '../lib/markdown.js';
+import MarkdownNode from './MarkdownNode.jsx';
+import { isStartingTag } from './parse-react-component-utils.js';
 
 function recursiveParseMarkedToken(ctx, token) {
   let recursiveParseResult;

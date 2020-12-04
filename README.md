@@ -7,3 +7,6 @@ yarn build
 yarn link:all
 yarn dev:client or yarn dev:static or yarn dev:api or yarn dev:gateway
 `
+
+puppeteer-support-esm.js必须放在根目录，里面的常量dirname返回puppeteer-support-esm.js所在目录，用于修改node_modules/目录下的puppeteer-core文件。
+

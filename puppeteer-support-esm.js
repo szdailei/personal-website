@@ -16,8 +16,8 @@
 
 import fs from 'fs';
 import path from 'path';
-import dirname from './dirname.js';
 
+const dirname = path.dirname(new URL(import.meta.url).pathname);
 const puppeteerRootDir = path.join(dirname, 'node_modules/puppeteer-core/');
 const puppeteerDir = path.join(puppeteerRootDir, 'lib/esm/puppeteer/');
 

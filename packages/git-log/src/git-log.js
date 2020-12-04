@@ -1,11 +1,11 @@
 import fs from 'fs';
+import dotenv from 'dotenv-defaults';
 import { gitlogPromise } from 'gitlog';
-import loadEnv from '../../../load-env.js';
 
 (async () => {
-  const DEFAULT_LOCALE = 'cn';
-  await loadEnv();
+  await dotenv.config();
 
+  const DEFAULT_LOCALE = 'cn';
   const GIT_LOG_JSON = 'reports/git-log.json';
   const minute = 1000 * 60;
   const hour = minute * 60;

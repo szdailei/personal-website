@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { useRemoteData } from '../lib/network';
-import parseMarkdown from './parse-markdown';
-import Pages from './Pages';
+import { useRemoteData } from '../lib/network.js';
+import parseMarkdown from './parse-markdown.js';
+import Pages from './Pages.jsx';
 
 function PresentationOfRemoteData() {
   const { course } = useParams();

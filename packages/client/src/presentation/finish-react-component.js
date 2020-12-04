@@ -1,5 +1,5 @@
-import { getCurrentNode, finishNode } from './tree';
-import { CreateComponent } from './Component';
+import { getCurrentNode, finishNode } from './tree.js';
+import { CreateComponent } from './Component.jsx';
 
 function finishReactComponent(ctx) {
   const currentNode = getCurrentNode(ctx.reactRoot);

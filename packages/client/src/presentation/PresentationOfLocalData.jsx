@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Div, Input } from '../styled';
-import parseMarkdown from './parse-markdown';
-import Pages from './Pages';
+import { Div, Input } from '../styled/index.js';
+import parseMarkdown from './parse-markdown.js';
+import Pages from './Pages.jsx';
 
 const reader = new FileReader();
 

@@ -1,8 +1,8 @@
 import marked from 'marked';
-import recursiveParseMarkedToken from './recursive-parse-marked-token';
-import { createNode, addNode } from './tree';
-import { isStartingTag } from './parse-react-component-utils';
-import finishReactComponent from './finish-react-component';
+import recursiveParseMarkedToken from './recursive-parse-marked-token.js';
+import { createNode, addNode } from './tree.js';
+import { isStartingTag } from './parse-react-component-utils.js';
+import finishReactComponent from './finish-react-component.js';
 
 function startReactCompenent(ctx, text) {
   const node = createNode(text);

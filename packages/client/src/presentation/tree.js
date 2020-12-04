@@ -5,8 +5,8 @@ import {
   isClosingTagAtEnd,
   parseTextExceptTheFirstTag,
   removeStartingAndClosingTag,
-} from './parse-react-component-utils';
-import { CreateComponent } from './Component';
+} from './parse-react-component-utils.js';
+import { CreateComponent } from './Component.jsx';
 
 function createRoot() {
   return {

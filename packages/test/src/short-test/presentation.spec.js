@@ -66,7 +66,7 @@ pdf文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
 beforeAll(async () => {
   browser = await puppeteer.launch({
     headless: true,
-    executablePath: config.PUPPETEER_EXECUTABLE_PATH,
+    executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
   });
 
   const result = await gotoPresentation(browser, config);
