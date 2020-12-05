@@ -11,7 +11,7 @@
     "prepare": "node ../../puppeteer-support-esm.js",
     "export": "node src/export-all-pdfs.js",
     "load-test": "node src/load-test/load-test.js",
-    "test": "jest && chromium reports/jest_html_reporters.html"
+    "spec": "jest && chromium reports/jest_html_reporters.html"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.1",

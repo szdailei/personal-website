@@ -1,7 +1,6 @@
 import path from 'path';
 import fs from 'fs';
 import parseMarkdown from '../presentation/parse-markdown.js';
-// import testData from './test.md'
 
 (async () => {
   const TEST_FILE = './test.md';
@@ -9,7 +8,5 @@ import parseMarkdown from '../presentation/parse-markdown.js';
   const testFile = path.join(dirname, TEST_FILE);
 
   const testData = await fs.promises.readFile(testFile, 'utf-8');
-  const parsedResult = parseMarkdown(testData);
-
-  console.log(parsedResult);
+  parseMarkdown(testData);
 })();

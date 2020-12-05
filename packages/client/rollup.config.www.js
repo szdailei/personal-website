@@ -1,4 +1,4 @@
-import baseConfig from '../../rollup.config';
+import baseConfig from '../../rollup.config.js';
 
 const config = { ...baseConfig };
 
