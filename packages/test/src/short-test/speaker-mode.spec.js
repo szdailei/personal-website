@@ -9,9 +9,9 @@ const speakModeReq = `
 20201111，在http://127.0.0.1上，md文件的内容将要输出到投影仪端口、
 md里面的Note组件内容将要输出到投影仪端口。`;
 describe(speakModeReq, () => {
-  const splitScreenReq = `按动P键，浏览器创建新tab显示md文件的Note。
+  const splitScreenContr = `按动P键，浏览器创建新tab显示md文件的Note。
 新tab输出到主显示端口，原tab输出到次端口。
 切换到新tab。
 原tab和新tab同步`;
-  test.skip(splitScreenReq, async () => {});
+  test.skip(splitScreenContr, async () => {});
 });

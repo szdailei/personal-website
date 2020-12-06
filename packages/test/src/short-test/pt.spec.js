@@ -1,4 +1,5 @@
 import puppeteer from 'puppeteer-core';
+import dotenv from 'dotenv-defaults';
 import gotoPresentation from '../lib/goto-presentation.js';
 import setFontSizes from '../lib/set-font-sizes.js';
 import setTitle from './set-title.js';
@@ -10,7 +11,7 @@ let browser;
 let page;
 let firstFileName;
 
-const presentationReq = `
+const ptReq = `
 @pain
 20200601，代磊使用PowerPoint写作ppt文件，使用PowerPoint播放ppt文件，
 在胶片格式上浪费时间多、只能使用Windows。
@@ -21,19 +22,19 @@ const presentationReq = `
 @goal
 20201111，在http://127.0.0.1上，浏览器将md文件解析为React组件，将要在浏览器显示。
 `;
-describe(presentationReq, () => {
-  const setTitleReq = `document.title设置为胶片的Title`;
-  test(setTitleReq, async () => {
+describe(ptReq, () => {
+  const setTitleContr = `document.title设置为胶片的Title`;
+  test(setTitleContr, async () => {
     await setTitle();
   });
 
-  const forwardBackwardReq = `每页如果有header，则footer可见，否则footer不可见。
+  const forwardBackwardContr = `每页如果有header，则footer可见，否则footer不可见。
   到最后一页前，每页footer的currentPageNum等于按动Space键的次数+1。
   到最后一页时，按动Space键，currentPageNum等于totalPagesNum。
   到最后一页时，按动Home键，currentPageNum等于1。
   到第一页时，按动PageUp键，currentPageNum等于1。
   到第一页时，按动End键，currentPageNum等于totalPagesNum。`;
-  test(forwardBackwardReq, async () => {
+  test(forwardBackwardContr, async () => {
     await forwardBackward(page);
   });
 });
@@ -47,10 +48,10 @@ const exportPdfReq = `@pain
 @goal
 20201111，在http://127.0.0.1上，md文件不设置纸张大小，软件导出pdf时将要设置纸张和字体大小。`;
 describe(exportPdfReq, () => {
-  const exportPdfStepsReq = `按动KeyA键，切换到显示所有页。用puppeteer生成pdf文件。
+  const exportPdfContr = `按动KeyA键，切换到显示所有页。用puppeteer生成pdf文件。
 pdf文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
   test(
-    exportPdfStepsReq,
+    exportPdfContr,
     async () => {
       await setFontSizes(page, 19);
       const options = {
@@ -64,6 +65,7 @@ pdf文件的页数等于胶片的页数，宽度和高度是屏幕的75%。`;
 });
 
 beforeAll(async () => {
+  await dotenv.config();
   browser = await puppeteer.launch({
     headless: true,
     executablePath: process.env.PUPPETEER_EXECUTABLE_PATH,
