@@ -14,13 +14,13 @@
     "copy:images": "cp ../../../www-data/storage/courses/images/{*.jpg,*.png,*.webp} dist/local/courses/images/",
     "copy:videos": "cp ../../../www-data/storage/courses/videos/{*.mp4,*.vtt} dist/local/courses/videos/",
     "dev": "yarn clean && yarn copy:www && yarn rollup --watch -c rollup.config.www.js",
+    "dev:debug": "cp src/__debug__/*.md dist && yarn rollup --watch -c rollup.config.debug.js",
     "inline": "yarn html-inline -i dist/local/tmp/index.html -o dist/local/local-presentation.html && rimraf dist/local/tmp",
     "build:www": "yarn copy:www && yarn rollup -c rollup.config.www.js",
     "build:local": "yarn copy:local && yarn rollup -c rollup.config.local.js && yarn inline && yarn copy:images && yarn copy:videos",
-    "build:debug": "cp src/__debug__/test.md dist && yarn rollup -c rollup.config.debug.js",
-    "debug": "cp src/__debug__/test.md dist && yarn rollup --watch -c rollup.config.debug.js",
+    "build:debug": "cp src/__debug__/*.md dist && yarn rollup -c rollup.config.debug.js",
     "build": "yarn clean && yarn build:www && yarn build:local",
-    "contract": "DEBUG=解析自定义组件 DEBUG_DEPTH=10 node dist/debug.js"
+    "debug": "DEBUG=解析自定义组件 DEBUG_DEPTH=10 node dist/debug.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",

@@ -11,8 +11,7 @@ let browser;
 let page;
 let firstFileName;
 
-const ptReq = `
-@pain
+const ptReq = `@pain
 20200601，代磊使用PowerPoint写作ppt文件，使用PowerPoint播放ppt文件，
 在胶片格式上浪费时间多、只能使用Windows。
 @expect
@@ -20,8 +19,7 @@ const ptReq = `
 @status
 20200601，MS Office将ppt文件解析为专有播放组件在PowerPoint播放。
 @goal
-20201111，在http://127.0.0.1上，浏览器将md文件解析为React组件，将要在浏览器显示。
-`;
+20201111，在http://127.0.0.1上，浏览器将md文件解析为React组件，将要在浏览器显示。`;
 describe(ptReq, () => {
   const setTitleContr = `document.title设置为胶片的Title`;
   test(setTitleContr, async () => {

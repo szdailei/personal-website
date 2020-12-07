@@ -3,7 +3,7 @@ import fs from 'fs';
 import parseMarkdown from '../presentation/parse-markdown.js';
 
 (async () => {
-  const TEST_FILE = './test.md';
+  const TEST_FILE = './debug.md';
   const dirname = path.dirname(new URL(import.meta.url).pathname);
   const testFile = path.join(dirname, TEST_FILE);
 
