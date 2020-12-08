@@ -8,7 +8,7 @@ import { Article, Section, Header, Main } from '../sectioning/index.js';
 function Home({ repo, locale, users }) {
   const children = [];
   users.forEach((user) => {
-    children.push(<User key={makeid()} commits={user} locale={locale} />);
+    children.push(<User key={makeid()} commits={user} repo={repo} locale={locale} />);
   });
 
   const gridTemplateAreas = `

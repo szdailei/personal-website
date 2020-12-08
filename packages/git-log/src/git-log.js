@@ -18,9 +18,8 @@ import { gitlogPromise } from 'gitlog';
     number: 100,
     fields: ['subject', 'body', 'committerName', 'committerEmail', 'committerDate', 'authorName'],
   };
-  const paths = options.repo.split('/');
   const result = {
-    repo: paths[paths.length - 1],
+    repo: options.repo,
     locale: process.env.LOCALE || DEFAULT_LOCALE,
     data: await gitlogPromise(options),
   };

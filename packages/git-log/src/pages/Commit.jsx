@@ -4,9 +4,9 @@ import { Span } from '../styled/index.js';
 import { Section, Header, Main } from '../sectioning/index.js';
 import Details from './Details';
 
-function Commit({ commit, locale }) {
+function Commit({ commit, repo, locale }) {
   function Popup() {
-    return <Details files={commit.files} status={commit.status} />;
+    return <Details files={commit.files} status={commit.status} repo={repo} />;
   }
 
   const date = new Date(commit.committerDate);
@@ -43,6 +43,7 @@ function Commit({ commit, locale }) {
 }
 
 Commit.propTypes = {
+  repo: PropTypes.string.isRequired,
   locale: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   commit: PropTypes.object.isRequired,

@@ -1,5 +1,5 @@
 import debug from 'debug/src/browser.js';
-import kuler from 'kuler'
+import kuler from 'kuler';
 import marked from 'marked';
 import recursiveParseMarkedToken from './recursive-parse-marked-token.js';
 import { createNode, addNode } from './tree.js';

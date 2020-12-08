@@ -5,13 +5,13 @@ import { Span } from '../styled/index.js';
 import { Section, Header, Main } from '../sectioning/index.js';
 import Commit from './Commit.jsx';
 
-function User({ commits, locale }) {
+function User({ commits, repo, locale }) {
   const name = commits[0].committerName;
   const email = commits[0].committerEmail;
 
   const children = [];
   commits.forEach((commit) => {
-    children.push(<Commit key={makeid()} commit={commit} locale={locale} />);
+    children.push(<Commit key={makeid()} commit={commit} repo={repo} locale={locale} />);
   });
 
   const gridTemplateAreas = `
@@ -44,6 +44,7 @@ function User({ commits, locale }) {
 }
 
 User.propTypes = {
+  repo: PropTypes.string.isRequired,
   locale: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   commits: PropTypes.array.isRequired,

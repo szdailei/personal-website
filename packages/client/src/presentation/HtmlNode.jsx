@@ -75,9 +75,9 @@ function recursiveParseElement(element) {
         </Div>
       );
       break;
-      case 'HR':
-        node = <hr key={makeid()} />;
-        break;
+    case 'HR':
+      node = <hr key={makeid()} />;
+      break;
     case 'SOURCE':
       src =
         window.location.protocol === 'file:'

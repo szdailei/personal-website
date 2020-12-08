@@ -4,13 +4,17 @@ import PropTypes from 'prop-types';
 import makeid from '../lib/makeid';
 import { Div, Span } from '../styled/index.js';
 
-function Details({ files, status }) {
+function Details({ files, status, repo }) {
+  console.log('process.env.REPO', repo);
   const children = [];
   for (let i = 0; i < files.length; i += 1) {
+    const filePath = `${repo}/${files[i]}`;
     const child = (
       <Div key={makeid()}>
         <Span>{status[i]}</Span>
-        <Span marginLeft="2em">{files[i]}</Span>
+        <Span marginLeft="2em">
+          <a href={filePath}>{files[i]}</a>
+        </Span>
       </Div>
     );
     children.push(child);
