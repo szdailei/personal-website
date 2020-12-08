@@ -1,3 +1,5 @@
+import debug from 'debug/src/browser.js';
+import kuler from 'kuler';
 import marked from 'marked';
 import { trim } from '../lib/markdown.js';
 import { isStartingTag, isClosingTagAtBeginning, parseTextExceptTheFirstTag } from './parse-react-component-utils.js';
@@ -36,6 +38,8 @@ function isParsingReactComponent(ctx) {
   return ctx.reactRoot;
 }
 function parseMarkdown(markdown) {
+  const DEBUG_NAME = '解析Markdown';
+  const BLUE = '0000FF';
   const tokens = marked.lexer(markdown);
 
   // Fix bugs of marked
@@ -63,15 +67,19 @@ function parseMarkdown(markdown) {
       }
       if (node.error) {
         // React component
+        debug(DEBUG_NAME)(kuler(`@require 待解析组件的文本：${node.text}`, BLUE));
         if (isStartingTag(node.text)) {
+          debug(DEBUG_NAME)('@require 发现Starting Tag');
+          debug(DEBUG_NAME)('@ensure 开始解析自定义组件');
           startReactCompenent(context, node.text);
         } else {
           if (!isClosingTagAtBeginning(node.text)) {
             // eslint-disable-next-line no-console
             console.assert(false, `Expect closing tag, got ${node}`);
           }
+          debug(DEBUG_NAME)('@require 发现Closing Tag');
+          debug(DEBUG_NAME)('@ensure 结束解析自定义组件');
           let { text } = node;
-
           while (isClosingTagAtBeginning(text)) {
             finishReactComponent(context);
             text = trim(parseTextExceptTheFirstTag(text));
