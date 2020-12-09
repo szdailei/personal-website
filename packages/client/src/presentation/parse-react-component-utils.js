@@ -105,13 +105,17 @@ function parseTextExceptTheFirstTag(text) {
 function removeStartingAndClosingTag(text) {
   const textWithoutStartingTag = parseTextExceptTheFirstTag(text);
   let textContent = '';
-  const tokens = textWithoutStartingTag.split('<');
-  const lastTagName = tokens[tokens.length - 1];
-  const newTokens = textWithoutStartingTag.split(`<${lastTagName}`);
 
-  // The last is closing tag, skip
-  for (let i = 0; i < newTokens.length - 1; i += 1) {
-    textContent += newTokens[i];
+  let indexOfLastBracket;
+  for (let i = textWithoutStartingTag.length - 1; i > 0; i -= 1) {
+    if (textWithoutStartingTag[i] === '<') {
+      indexOfLastBracket = i;
+      break;
+    }
+  }
+
+  for (let i = 0; i < indexOfLastBracket; i += 1) {
+    textContent += textWithoutStartingTag[i];
   }
 
   let isEmpty = true;
