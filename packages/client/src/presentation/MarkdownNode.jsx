@@ -8,16 +8,25 @@ import HtmlNode from './HtmlNode.jsx';
 function MarkdownNode(token, children) {
   let node;
   const tokenText = trim(token.text);
+
   switch (token.type) {
     case 'blockquote':
       node = <blockquote key={makeid()}>{children}</blockquote>;
       break;
     case 'code':
-      node = (
-        <Div key={makeid()} borderStyle="solid">
-          <pre key={makeid()}>{children}</pre>
-        </Div>
-      );
+      if (isReactComponent(tokenText)) {
+        node = {
+          error: 'react-component',
+          type: token.type,
+          text: tokenText,
+        };
+      } else {
+        node = (
+          <Div key={makeid()} borderStyle="solid">
+            <pre key={makeid()}>{children}</pre>
+          </Div>
+        );
+      }
       break;
     case 'em':
       node = <em key={makeid()}>{children}</em>;

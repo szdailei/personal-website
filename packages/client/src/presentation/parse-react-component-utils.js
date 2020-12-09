@@ -1,4 +1,8 @@
+import alphabetical from 'is-alphabetical'
+
 function isCapitalLetter(letter) {
+  if (!alphabetical(letter)) return false
+
   if (letter.toUpperCase() === letter) {
     return true;
   }
@@ -22,7 +26,7 @@ function isClosingTagAtBeginning(text) {
 function isClosingTagAtEnd(text) {
   const tokens = text.split('<');
   const lastTagName = tokens[tokens.length - 1];
-  if (lastTagName[0] === '/') {
+  if (lastTagName[0] === '/' && isCapitalLetter(lastTagName[1])) {
     return true;
   }
   return false;
@@ -101,10 +105,13 @@ function parseTextExceptTheFirstTag(text) {
 function removeStartingAndClosingTag(text) {
   const textWithoutStartingTag = parseTextExceptTheFirstTag(text);
   let textContent = '';
-  const tokens = textWithoutStartingTag.split('</');
+  const tokens = textWithoutStartingTag.split('<');
+  const lastTagName = tokens[tokens.length - 1]
+  const newTokens = textWithoutStartingTag.split(`<${lastTagName}`);
+
   // The last is closing tag, skip
-  for (let i = 0; i < tokens.length - 1; i += 1) {
-    textContent += tokens[i];
+  for (let i = 0; i < newTokens.length - 1; i += 1) {
+    textContent += newTokens[i];
   }
 
   let isEmpty = true;

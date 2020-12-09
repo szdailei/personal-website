@@ -18,8 +18,8 @@ function Home({ repo, locale, users }) {
   return (
     <Article>
       <Section gridTemplateColumns="1fr" gridTemplateRows="auto auto" gridTemplateAreas={gridTemplateAreas}>
-        <Header fontSize="1.3em" width="30%" display="grid" gridTemplateColumns="auto auto">
-          <Span>Repo name</Span>
+        <Header fontSize="1.3em" display="grid" gridTemplateColumns="auto auto">
+          <Span>Repo path</Span>
           <Span>{repo}</Span>
         </Header>
         <Main marginTop="1em">{children}</Main>

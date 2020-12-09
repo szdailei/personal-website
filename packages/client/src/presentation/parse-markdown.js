@@ -1,6 +1,5 @@
-import debug from 'debug/src/browser.js';
-import kuler from 'kuler';
 import marked from 'marked';
+import { debug, color, START_COLOR, MD_PARSE, REACT_PARSE } from '../lib/debug.js';
 import { trim } from '../lib/markdown.js';
 import { isStartingTag, isClosingTagAtBeginning, parseTextExceptTheFirstTag } from './parse-react-component-utils.js';
 import recursiveParseMarkedToken from './recursive-parse-marked-token.js';
@@ -38,8 +37,6 @@ function isParsingReactComponent(ctx) {
   return ctx.reactRoot;
 }
 function parseMarkdown(markdown) {
-  const DEBUG_NAME = '解析Markdown';
-  const BLUE = '0000FF';
   const tokens = marked.lexer(markdown);
 
   // Fix bugs of marked
@@ -54,6 +51,8 @@ function parseMarkdown(markdown) {
     totalPagesNum: createTotalPagesNum(tokens),
   };
 
+  debug(MD_PARSE)(color(`@require MD\n${markdown}`, START_COLOR));
+  debug(MD_PARSE)('@ensure 解析为tokens', tokens);
   tokens.forEach((token) => {
     if (token.type === 'hr') {
       finishOnePage(context, pages);
@@ -67,18 +66,22 @@ function parseMarkdown(markdown) {
       }
       if (node.error) {
         // React component
-        debug(DEBUG_NAME)(kuler(`@require 待解析组件的文本：${node.text}`, BLUE));
         if (isStartingTag(node.text)) {
-          debug(DEBUG_NAME)('@require 发现Starting Tag');
-          debug(DEBUG_NAME)('@ensure 开始解析自定义组件');
           startReactCompenent(context, node.text);
         } else {
           if (!isClosingTagAtBeginning(node.text)) {
             // eslint-disable-next-line no-console
             console.assert(false, `Expect closing tag, got ${node}`);
           }
-          debug(DEBUG_NAME)('@require 发现Closing Tag');
-          debug(DEBUG_NAME)('@ensure 结束解析自定义组件');
+          debug(REACT_PARSE)(
+            '@require React Closing Tag ',
+            node.text,
+            ' and ',
+            context.reactRoot,
+            '不是null ',
+            '@ensure 结束解析',
+            context.reactRoot.current
+          );
           let { text } = node;
           while (isClosingTagAtBeginning(text)) {
             finishReactComponent(context);

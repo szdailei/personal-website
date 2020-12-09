@@ -20,17 +20,15 @@
     "build:local": "yarn copy:local && yarn rollup -c rollup.config.local.js && yarn inline && yarn copy:images && yarn copy:videos",
     "build:debug": "cp src/__debug__/*.md dist && yarn rollup -c rollup.config.debug.js",
     "build": "yarn clean && yarn build:www && yarn build:local",
-    "debug": "DEBUG=解析自定义组件 DEBUG_DEPTH=10 node dist/debug.js"
+    "debug": "DEBUG=* DEBUG_DEPTH=10 node dist/debug.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
     "@emotion/styled": "^10.0.27",
-    "ansi-colors": "^4.1.1",
-    "chalk": "^4.1.0",
-    "colors": "^1.4.0",
     "debug": "^4.3.1",
     "graphql-request": "^2.0.0",
     "history": "^5.0.0",
+    "is-alphabetical": "^1.0.4",
     "kuler": "^2.0.0",
     "marked": "^1.2.2",
     "prop-types": "^15.7.2",

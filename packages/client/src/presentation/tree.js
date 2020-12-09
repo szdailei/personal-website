@@ -15,6 +15,7 @@ function createRoot() {
     textContent: null,
     isFinished: false,
     foundClosingTag: null,
+    curent: null,
     parent: null,
     nodeList: [],
     children: [],
