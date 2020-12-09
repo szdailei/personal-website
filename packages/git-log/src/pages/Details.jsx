@@ -5,7 +5,6 @@ import makeid from '../lib/makeid';
 import { Div, Span } from '../styled/index.js';
 
 function Details({ files, status, repo }) {
-  console.log('process.env.REPO', repo);
   const children = [];
   for (let i = 0; i < files.length; i += 1) {
     const filePath = `${repo}/${files[i]}`;
@@ -24,6 +23,7 @@ function Details({ files, status, repo }) {
 }
 
 Details.propTypes = {
+  repo: PropTypes.string.isRequired,
   files: PropTypes.array.isRequired,
   status: PropTypes.array.isRequired,
 };

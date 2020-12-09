@@ -1,7 +1,7 @@
-import alphabetical from 'is-alphabetical'
+import alphabetical from 'is-alphabetical';
 
 function isCapitalLetter(letter) {
-  if (!alphabetical(letter)) return false
+  if (!alphabetical(letter)) return false;
 
   if (letter.toUpperCase() === letter) {
     return true;
@@ -106,7 +106,7 @@ function removeStartingAndClosingTag(text) {
   const textWithoutStartingTag = parseTextExceptTheFirstTag(text);
   let textContent = '';
   const tokens = textWithoutStartingTag.split('<');
-  const lastTagName = tokens[tokens.length - 1]
+  const lastTagName = tokens[tokens.length - 1];
   const newTokens = textWithoutStartingTag.split(`<${lastTagName}`);
 
   // The last is closing tag, skip
