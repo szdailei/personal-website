@@ -3,8 +3,8 @@ import color from 'kuler';
 
 const START_COLOR = '0000FF';
 
-const MD_PARSE = '解析Markdown';
+const MD_PARSE = 'parse:markdown';
 
-const REACT_PARSE = '解析React';
+const REACT_PARSE = 'parse:react';
 
 export { debug, color, START_COLOR, MD_PARSE, REACT_PARSE };

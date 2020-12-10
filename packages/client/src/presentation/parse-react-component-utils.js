@@ -2,30 +2,24 @@ import alphabetical from 'is-alphabetical';
 
 function isCapitalLetter(letter) {
   if (!alphabetical(letter)) return false;
-
-  if (letter.toUpperCase() === letter) {
-    return true;
-  }
+  if (letter.toUpperCase() === letter) return true;
   return false;
 }
 
 function isStartingTag(text) {
-  if (text[1] === '/') {
-    return false;
-  }
+  if (text[1] === '/') return false;
   return true;
 }
 
 function isClosingTagAtBeginning(text) {
-  if (text[0] === '<' && text[1] === '/') {
-    return true;
-  }
+  if (text[0] === '<' && text[1] === '/') return true;
   return false;
 }
 
 function isClosingTagAtEnd(text) {
   const tokens = text.split('<');
   const lastTagName = tokens[tokens.length - 1];
+
   if (lastTagName[0] === '/' && isCapitalLetter(lastTagName[1])) {
     return true;
   }
@@ -33,9 +27,10 @@ function isClosingTagAtEnd(text) {
 }
 
 function isReactComponent(text) {
-  if (isStartingTag(text)) {
-    return isCapitalLetter(text[1]);
-  }
+  if (text[0] !== '<') return false;
+
+  if (isStartingTag(text)) return isCapitalLetter(text[1]);
+
   return isCapitalLetter(text[2]);
 }
 
@@ -53,6 +48,7 @@ function getTagName(text) {
 
 function matchChars(char, chars) {
   if (!chars) return false;
+
   for (let i = 0; i < chars.length; i += 1) {
     if (char === chars[i]) return true;
   }
@@ -82,6 +78,7 @@ function parseText(text, tokens) {
       isAfterStartChars = true;
     }
   }
+
   if (isEmpty) return null;
   return textContent;
 }

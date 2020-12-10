@@ -60,7 +60,7 @@ function parseMarkdown(markdown) {
       context.hasHeaderInCurrentPage = false;
       return;
     }
-    
+
     const node = recursiveParseMarkedToken(context, token);
     if (!node) return;
 

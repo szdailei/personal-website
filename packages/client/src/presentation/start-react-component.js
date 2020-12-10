@@ -24,8 +24,8 @@ function startReactCompenent(ctx, text) {
     contract('@require React tag里有MD \n%s\n@ensure 解析为%d个token%O', node.textContent, tokens.length, tokens);
 
     tokens.forEach((token) => {
-      const subNode = recursiveParseMarkedToken(ctx, token);
       contract('@require token \n%O \n@ensure 递归解析为subNode', token);
+      const subNode = recursiveParseMarkedToken(ctx, token);
 
       if (subNode && subNode.error) {
         if (isStartingTag(subNode.text)) {
