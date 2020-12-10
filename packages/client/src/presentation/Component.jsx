@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox, Div } from '../styled';
-import { Header, Title } from '../sectioning';
-import makeid from '../lib/makeid';
-import { getTextFromChildren } from './parse-react-component-utils';
-import Split from '../layout/Split';
+import { Checkbox, Div } from '../styled/index.js';
+import { Header, Title } from '../sectioning/index.js';
+import makeid from '../lib/makeid.js';
+import { getTextFromChildren } from './parse-react-component-utils.js';
+import Split from '../layout/Split.jsx';
 
 function CheckboxWithState({ checked, ...styles }) {
   const [state, setState] = useState(checked);

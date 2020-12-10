@@ -20,7 +20,7 @@
     "build:local": "yarn copy:local && yarn rollup -c rollup.config.local.js && yarn inline && yarn copy:images && yarn copy:videos",
     "build:debug": "cp src/__debug__/*.md dist && yarn rollup -c rollup.config.debug.js",
     "build": "yarn clean && yarn build:www && yarn build:local",
-    "debug": "DEBUG=* DEBUG_DEPTH=10 node dist/debug.js"
+    "debug": "DEBUG=* node dist/debug.js"
   },
   "dependencies": {
     "@emotion/core": "^10.0.35",
@@ -31,6 +31,7 @@
     "is-alphabetical": "^1.0.4",
     "kuler": "^2.0.0",
     "marked": "^1.2.2",
+    "pretty-error": "^2.1.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

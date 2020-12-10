@@ -142,10 +142,20 @@ function getAttributes(text) {
   const attributes = {};
   let key;
   let value;
+  let attrsStr;
 
   const firstTextContent = parseTheFirstTag(text);
   if (!firstTextContent) return {};
-  const tokens = firstTextContent.split(' ');
+
+  const { length } = firstTextContent;
+  if (length >= 2 && firstTextContent[length - 1] === '/' && firstTextContent[length - 2] === ' ') {
+    // remove '/' if it is self closing tag
+    attrsStr = firstTextContent.slice(0, -2);
+  } else {
+    attrsStr = firstTextContent;
+  }
+
+  const tokens = attrsStr.split(' ');
 
   // The first is tag name, skip
   for (let i = 1; i < tokens.length; i += 1) {
