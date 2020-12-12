@@ -9,8 +9,8 @@ function Input({ type, accept, onChange, placeholder, ...styles }) {
     borderStyle: 'none none solid none',
     ...styles,
   };
-  const StyledInput = styled.input(objStyles);
-  return <StyledInput type={type} accept={accept} onChange={onChange} placeholder={placeholder} />;
+  const Styled = styled.input(objStyles);
+  return <Styled type={type} accept={accept} onChange={onChange} placeholder={placeholder} />;
 }
 
 Input.propTypes = {

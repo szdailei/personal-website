@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { GraphQLClient } from 'graphql-request';
-import config from '../config';
+import config from '../config.js';
 
 async function fetchData(url, type) {
   const options = {

@@ -16,8 +16,8 @@ function Select({ onChange, options, ...styles }) {
   const objStyles = {
     ...styles,
   };
-  const StyledSelect = styled.select(objStyles);
-  return <StyledSelect onChange={onChange}>{options}</StyledSelect>;
+  const Styled = styled.select(objStyles);
+  return <Styled onChange={onChange}>{options}</Styled>;
 }
 
 Select.propTypes = {

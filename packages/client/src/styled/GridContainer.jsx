@@ -9,8 +9,8 @@ function GridContainer({ gridTemplateColumns, children, ...styles }) {
     gridTemplateColumns,
     ...styles,
   };
-  const StyledDiv = styled.div(objStyles);
-  return <StyledDiv>{children}</StyledDiv>;
+  const Styled = styled.div(objStyles);
+  return <Styled>{children}</Styled>;
 }
 
 GridContainer.propTypes = {

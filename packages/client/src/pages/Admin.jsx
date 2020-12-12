@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import makeid from '../lib/makeid';
-import { request, useRemoteData } from '../lib/network';
-import { FlexContainer, GridContainer, StyledContainer, Div, Button, Option, Select } from '../styled';
-import { Article } from '../sectioning';
-import { Error } from '../components';
-import ChangePassword from './ChangePassword';
-import SignUp from './SignUp';
+import makeid from '../lib/makeid.js';
+import { request, useRemoteData } from '../lib/network.js';
+import { FlexContainer, GridContainer, StyledContainer, Div, Button, Option, Select } from '../styled/index.js';
+import { Article } from '../sectioning/index.js';
+import { Error } from '../components/index.js';
+import ChangePassword from './ChangePassword.jsx';
+import SignUp from './SignUp.jsx';
 
 function selectRole() {}
 

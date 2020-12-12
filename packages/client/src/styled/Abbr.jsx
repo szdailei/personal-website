@@ -7,11 +7,11 @@ function Abbr({ onClick, title, children, ...styles }) {
     textDecoration: 'none',
     ...styles,
   };
-  const StyledAbbr = styled.abbr(objStyles);
+  const Styled = styled.abbr(objStyles);
   return (
-    <StyledAbbr title={title} onClick={onClick}>
+    <Styled title={title} onClick={onClick}>
       {children}
-    </StyledAbbr>
+    </Styled>
   );
 }
 

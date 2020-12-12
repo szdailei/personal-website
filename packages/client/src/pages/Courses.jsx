@@ -1,10 +1,10 @@
 import React from 'react';
-import makeid from '../lib/makeid';
-import { useRemoteData } from '../lib/network';
-import { PRESENTATION_PATH } from '../lib/path';
-import { StyledContainer } from '../styled';
-import { Article, Header, Main, Section } from '../sectioning';
-import { Error } from '../components';
+import makeid from '../lib/makeid.js';
+import { useRemoteData } from '../lib/network.js';
+import { PRESENTATION_PATH } from '../lib/path.js';
+import { StyledContainer } from '../styled/index.js';
+import { Article, Header, Main, Section } from '../sectioning/index.js';
+import { Error } from '../components/index.js';
 
 function Courses() {
   const query = '{getCourses}';

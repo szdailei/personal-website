@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { request } from '../lib/network';
-import { GridContainer, Div, Button, Input } from '../styled';
-import { Article } from '../sectioning';
+import { request } from '../lib/network.js';
+import { GridContainer, Div, Button, Input } from '../styled/index.js';
+import { Article } from '../sectioning/index.js';
 
 function ChangePassword({ callback, name }) {
   let password;

@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import makeid from '../lib/makeid';
-import { getDownloadFileUrl, request, useRemoteData } from '../lib/network';
-import { GridContainer, StyledContainer, Abbr, Div, Span } from '../styled';
-import { Article, Header, Main, Section } from '../sectioning';
-import { Error } from '../components';
+import makeid from '../lib/makeid.js';
+import { getDownloadFileUrl, request, useRemoteData } from '../lib/network.js';
+import { GridContainer, StyledContainer, Abbr, Div, Span } from '../styled/index.js';
+import { Article, Header, Main, Section } from '../sectioning/index.js';
+import { Error } from '../components/index.js';
 
 async function gotoPdfUrl() {
   const query = `{pdf(url:"${window.location.href}")}`;

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FlexContainer, GridContainer, Div, Button, Input } from '../styled';
-import { request } from '../lib/network';
+import { FlexContainer, GridContainer, Div, Button, Input } from '../styled/index.js';
+import { request } from '../lib/network.js';
 
 function SignUp({ callback }) {
   let username;

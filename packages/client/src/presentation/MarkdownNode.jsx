@@ -4,6 +4,7 @@ import { convertSrcToLocal, convertSrcToServer, removeBlankLine, trim } from '..
 import { Div, Heading } from '../styled/index.js';
 import { isReactComponent } from './parse-react-component-utils.js';
 import HtmlNode from './HtmlNode.jsx';
+import TableNode from './TableNode.jsx';
 
 function MarkdownNode(token, children) {
   let node;
@@ -91,6 +92,9 @@ function MarkdownNode(token, children) {
       break;
     case 'strong':
       node = <strong key={makeid()}>{children}</strong>;
+      break;
+    case 'table':
+      node = TableNode(token);
       break;
     case 'text':
       node = <span key={makeid()}>{children}</span>;

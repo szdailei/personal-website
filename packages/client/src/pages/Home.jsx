@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import marked from 'marked';
-import { i18n, t } from '../i18n';
-import makeid from '../lib/makeid';
-import { Div, Span, Option, Select } from '../styled';
-import { Article, Section, Header, Main } from '../sectioning';
+import { i18n, t } from '../i18n/index.js';
+import makeid from '../lib/makeid.js';
+import { Div, Span, Option, Select } from '../styled/index.js';
+import { Article, Section, Header, Main } from '../sectioning/index.js';
 import awesome from '../awesome.md';
 
 function createHeading(node) {

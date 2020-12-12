@@ -1,5 +1,5 @@
-import Error from './Error';
-import Loading from './Loading';
-import NotFound from './NotFound';
+import Error from './Error.jsx';
+import Loading from './Loading.jsx';
+import NotFound from './NotFound.jsx';
 
 export { Error, Loading, NotFound };

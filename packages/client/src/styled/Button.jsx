@@ -45,11 +45,11 @@ function Button({ onClick, value, children, ...styles }) {
     ...styles,
   };
 
-  const StyledDiv = styled.div(objStyles);
+  const Styled = styled.div(objStyles);
   return (
-    <StyledDiv onClick={onClick} value={value}>
+    <Styled onClick={onClick} value={value}>
       {children}
-    </StyledDiv>
+    </Styled>
   );
 }
 

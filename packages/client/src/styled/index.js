@@ -1,16 +1,17 @@
-import FlexContainer from './FlexContainer';
-import GridContainer from './GridContainer';
-import StyledContainer from './StyledContainer';
-import Abbr from './Abbr';
-import Button from './Button';
-import Checkbox from './Checkbox';
-import Div from './Div';
-import Heading from './Heading';
-import Input from './Input';
-import Option from './Option';
-import Select from './Select';
-import Span from './Span';
-import TextArea from './TextArea';
+import FlexContainer from './FlexContainer.jsx';
+import GridContainer from './GridContainer.jsx';
+import StyledContainer from './StyledContainer.jsx';
+import Abbr from './Abbr.jsx';
+import Button from './Button.jsx';
+import Checkbox from './Checkbox.jsx';
+import Div from './Div.jsx';
+import Heading from './Heading.jsx';
+import Input from './Input.jsx';
+import Option from './Option.jsx';
+import Select from './Select.jsx';
+import Span from './Span.jsx';
+import TextArea from './TextArea.jsx';
+import { TH, TD, TR, THead, TBody, Table } from './Table.jsx';
 
 export {
   FlexContainer,
@@ -26,4 +27,10 @@ export {
   Select,
   Span,
   TextArea,
+  TH,
+  TD,
+  TR,
+  THead,
+  TBody,
+  Table,
 };

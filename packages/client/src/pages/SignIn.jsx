@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { request } from '../lib/network';
-import { storageWebToken } from '../lib/security';
-import { FlexContainer, GridContainer, Div, Button, Input } from '../styled';
-import { Article } from '../sectioning';
+import { request } from '../lib/network.js';
+import { storageWebToken } from '../lib/security.js';
+import { FlexContainer, GridContainer, Div, Button, Input } from '../styled/index.js';
+import { Article } from '../sectioning/index.js';
 
 function SignIn() {
   const navigate = useNavigate();

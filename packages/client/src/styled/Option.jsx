@@ -6,8 +6,8 @@ function Option({ value, label, ...styles }) {
   const objStyles = {
     ...styles,
   };
-  const StyledOption = styled.option(objStyles);
-  return <StyledOption value={value}>{label}</StyledOption>;
+  const Styled = styled.option(objStyles);
+  return <Styled value={value}>{label}</Styled>;
 }
 
 Option.propTypes = {

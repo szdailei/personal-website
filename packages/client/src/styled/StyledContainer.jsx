@@ -16,8 +16,8 @@ function StyledContainer({ onClick, children, disabled, ...styles }) {
   } else {
     objStyles = { ...styles };
   }
-  const StyledDiv = styled.div(objStyles);
-  return <StyledDiv onClick={onClick}>{children}</StyledDiv>;
+  const Styled = styled.div(objStyles);
+  return <Styled onClick={onClick}>{children}</Styled>;
 }
 
 StyledContainer.propTypes = {

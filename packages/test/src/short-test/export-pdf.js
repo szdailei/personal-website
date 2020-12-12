@@ -11,7 +11,7 @@ function getTestedFileName(pdfPath) {
 function getIncreasedPdfPages(fileName) {
   let num = 0;
   switch (fileName.trim()) {
-    case 'contract-development.md.pdf':
+    case 'contract-development.mdx.pdf':
       num = 2;
       break;
     default:

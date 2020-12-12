@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled/dist/styled.esm.js';
 
 function Div({ onClick, children, ...styles }) {
-  const StyledDiv = styled.div(styles);
-  return <StyledDiv onClick={onClick}>{children}</StyledDiv>;
+  const Styled = styled.div(styles);
+  return <Styled onClick={onClick}>{children}</Styled>;
 }
 
 Div.propTypes = {
