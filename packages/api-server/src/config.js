@@ -1,7 +1,7 @@
 const config = {
   secretKey: undefined,
   sql: undefined,
-  coursesPath: 'courses/',
+  COURSES_PATH: 'courses/',
 };
 
 export default config;

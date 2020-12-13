@@ -2,8 +2,6 @@
 
 开发环境下，在.env里面设置环境变量NODE_TLS_REJECT_UNAUTHORIZED=0
 
-先读取JS源文件目录的.env.defaults和.env文件。若读取的环境变量为空，则读取命令行运行目录的.env.defaults和.env文件。
-
 .env.defaults设置环境变量: 
 - API_SERVER_PORT: Http服务的监听端口。
 - STORAGE_DIR: 存放courses和resume文件的目录。

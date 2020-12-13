@@ -14,7 +14,7 @@ function getStorageDir() {
 }
 
 function getCoursesPath() {
-  return config.coursesPath;
+  return config.COURSES_PATH;
 }
 
 function storage() {}
