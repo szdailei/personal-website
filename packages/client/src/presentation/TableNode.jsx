@@ -9,13 +9,7 @@ function TableNode(table) {
   const tHeaders = [];
   table.header.forEach((header) => {
     tHeaders.push(
-      <TH
-        key={makeid()}
-        padding={padding}
-        borderTop="1px solid"
-        borderBottom="1px solid"
-        backgroundColor={backgroundColor}
-      >
+      <TH key={makeid()} padding={padding} backgroundColor={backgroundColor}>
         {header}
       </TH>
     );
@@ -32,7 +26,7 @@ function TableNode(table) {
     const dataCells = [];
     rowCells.forEach((cell) => {
       dataCells.push(
-        <TD key={makeid()} borderBottom="1px solid" padding={padding}>
+        <TD key={makeid()} padding={padding}>
           {cell}
         </TD>
       );
@@ -51,7 +45,7 @@ function TableNode(table) {
   const tBodyNode = <TBody key={makeid()}>{tBodyRows}</TBody>;
 
   const node = (
-    <Table key={makeid()} borderCollapse="collapse" borderSpace="0px" borderLeft="1px solid" borderRight="1px solid">
+    <Table key={makeid()}>
       {tHeadNode}
       {tBodyNode}
     </Table>

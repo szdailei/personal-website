@@ -21,7 +21,12 @@ TD.propTypes = {
 };
 
 function TR({ children, ...styles }) {
-  const Styled = styled.tr(styles);
+  const objStyles = {
+    borderBottom: '1px solid',
+    ...styles,
+  };
+
+  const Styled = styled.tr(objStyles);
   return <Styled>{children}</Styled>;
 }
 
@@ -48,7 +53,13 @@ TBody.propTypes = {
 };
 
 function Table({ children, ...styles }) {
-  const Styled = styled.table(styles);
+  const objStyles = {
+    borderCollapse: 'collapse',
+    borderSpace: '0px',
+    ...styles,
+  };
+
+  const Styled = styled.table(objStyles);
   return <Styled>{children}</Styled>;
 }
 
