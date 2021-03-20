@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import makeid from '../lib/makeid.js';
-import { Div } from '../styled/index.js';
+import { Div, Span } from '../styled/index.js';
 import { convertSrcToLocal, convertSrcToServer, trim } from '../lib/markdown.js';
 
 function camelCase(name) {
@@ -73,6 +73,13 @@ function recursiveParseElement(element) {
         <Div key={makeid()} {...attributes}>
           {children}
         </Div>
+      );
+      break;
+    case 'SPAN':
+      node = (
+        <Span key={makeid()} {...attributes}>
+          {children}
+        </Span>
       );
       break;
     case 'HR':

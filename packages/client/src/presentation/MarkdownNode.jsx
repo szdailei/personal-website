@@ -29,8 +29,11 @@ function MarkdownNode(token, children) {
         );
       }
       break;
+    case 'del':
+      node = <span key={makeid()}>{token.raw}</span>;
+      break;
     case 'em':
-      node = <em key={makeid()}>{children}</em>;
+      node = <em key={makeid()}>{tokenText}</em>;
       break;
     case 'heading':
       node = (
@@ -53,6 +56,13 @@ function MarkdownNode(token, children) {
             title={token.title}
           />
         </Div>
+      );
+      break;
+    case 'link':
+      node = (
+        <a key={makeid()} href={token.href} rel="noopener noreferrer" target="_blank">
+          {token.text}
+        </a>
       );
       break;
     case 'list':

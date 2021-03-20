@@ -22,6 +22,6 @@
     "jest-html-reporters": "^2.1.1",
     "minimist": "^1.2.5",
     "pdf-lib": "^1.12.0",
-    "puppeteer-core": "^5.4.1"
+    "puppeteer-core": "^8.0.0"
   }
 }

@@ -76,9 +76,7 @@ i18n.init = () => {
   i18n.setCurrentLocaleCode(localeCode);
 };
 
-i18n.getCurrentLocaleCode = () => {
-  return window.currentLocaleCode;
-};
+i18n.getCurrentLocaleCode = () => window.currentLocaleCode;
 
 i18n.getCurrentLocale = () => {
   switch (i18n.getCurrentLocaleCode()) {
@@ -108,13 +106,9 @@ function t(origKey) {
   return `Can't find "${origKey}" in "${i18n.getCurrentLocaleCode()}" resource`;
 }
 
-i18n.getNativeNames = () => {
-  return nativeNames;
-};
+i18n.getNativeNames = () => nativeNames;
 
-i18n.getNativeNameByLocale = (localeName) => {
-  return nativeNames.get(localeName);
-};
+i18n.getNativeNameByLocale = (localeName) => nativeNames.get(localeName);
 
 i18n.getLocaleByNativeName = (nativeName) => {
   let localeName = null;

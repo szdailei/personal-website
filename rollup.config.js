@@ -26,7 +26,7 @@ const config = {
       include: ['../**/src/**'],
       extensions: ['.jsx', '.tsx'],
     }),
-    replace({ 'process.env.NODE_ENV': JSON.stringify(mode) }),
+    replace({ 'process.env.NODE_ENV': JSON.stringify(mode), preventAssignment:true }),
     commonjs(),
     external(),
     json(),

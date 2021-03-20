@@ -29,9 +29,7 @@ export default {
     if (!Array.isArray(nameAndQualitys)) {
       return null;
     }
-    const sortedNameAndQualitys = nameAndQualitys.sort((a, b) => {
-      return Object.values(b)[0] - Object.values(a)[0];
-    });
+    const sortedNameAndQualitys = nameAndQualitys.sort((a, b) => Object.values(b)[0] - Object.values(a)[0]);
     return JSON.stringify(sortedNameAndQualitys);
   },
 };

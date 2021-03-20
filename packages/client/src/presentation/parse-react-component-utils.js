@@ -1,7 +1,7 @@
-import alphabetical from 'is-alphabetical';
+import { isAlphabetical } from 'is-alphabetical';
 
 function isCapitalLetter(letter) {
-  if (!alphabetical(letter)) return false;
+  if (!isAlphabetical(letter)) return false;
   if (letter.toUpperCase() === letter) return true;
   return false;
 }

@@ -14,10 +14,8 @@
     "start": "node dist/index.js"
   },
   "dependencies": {
-    "dotenv-defaults": "^2.0.0",
-    "fs": "^0.0.1-security",
+    "dotenv-defaults": "^2.0.1",
     "http-proxy": "^1.18.1",
-    "https": "^1.0.0",
-    "loglevel": "^1.6.8"
+    "loglevel": "^1.7.1"
   }
 }

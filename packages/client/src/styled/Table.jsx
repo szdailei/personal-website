@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from '@emotion/styled/dist/styled.esm.js';
+import styled from '@emotion/styled';
 
 function TH({ children, ...styles }) {
   const Styled = styled.th(styles);

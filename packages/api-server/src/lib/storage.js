@@ -129,25 +129,15 @@ storage.changePassword = async (name, password, salt) => {
   return { isSuccess, error };
 };
 
-storage.getSecretKey = () => {
-  return config.secretKey;
-};
+storage.getSecretKey = () => config.secretKey;
 
-storage.readCourseFile = async (name) => {
-  return storage.getDataByKey(`${getCoursesPath()}${name}`);
-};
+storage.readCourseFile = async (name) => storage.getDataByKey(`${getCoursesPath()}${name}`);
 
-storage.getDownloadRootDir = () => {
-  return process.env.DOWNLOAD_ROOT_DIR;
-};
+storage.getDownloadRootDir = () => process.env.DOWNLOAD_ROOT_DIR;
 
-storage.getDataByKey = (key) => {
-  return getData(path.join(getStorageDir(), `${key}`));
-};
+storage.getDataByKey = (key) => getData(path.join(getStorageDir(), `${key}`));
 
-storage.setDataByKey = (key, json) => {
-  return setData(path.join(getStorageDir(), `${key}`), json);
-};
+storage.setDataByKey = (key, json) => setData(path.join(getStorageDir(), `${key}`), json);
 
 storage.listFiles = async (dirName) => {
   const dir = path.join(getStorageDir(), dirName);

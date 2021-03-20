@@ -1,7 +1,14 @@
 {
-  "parser": "babel-eslint",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "ecmaVersion": 12,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
   "env": {
-    "es2017": true,
+    "es2021": true,
     "browser": true,
     "node": true,
     "serviceworker": true,

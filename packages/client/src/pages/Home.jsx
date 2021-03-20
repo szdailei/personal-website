@@ -29,14 +29,7 @@ function createListItem(node) {
       </Div>
     );
   }
-  return (
-    <Div key={makeid()}>
-      <Span>
-        {node[0].text}
-        {node[1].text}
-      </Span>
-    </Div>
-  );
+  return <Div key={makeid()}>{node[0].text}</Div>;
 }
 
 function parseMarkdown(markdown) {

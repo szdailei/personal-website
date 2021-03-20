@@ -9,8 +9,6 @@ rules.init = () => {
   );
 };
 
-rules.match = (url) => {
-  return rules.map.get(url);
-};
+rules.match = (url) => rules.map.get(url);
 
 export default rules;
