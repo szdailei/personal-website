@@ -101,6 +101,9 @@ function recursiveParseElement(element) {
       attributes.src = src;
       node = <track key={makeid()} {...attributes} />;
       break;
+    case 'U':
+      node = <u key={makeid()}>{children}</u>;
+      break;
     case 'VIDEO':
       defaultProps = {
         controls: true,

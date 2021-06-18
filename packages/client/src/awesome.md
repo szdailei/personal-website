@@ -143,12 +143,18 @@
 - [Celluloid] - Front of mpv
 - [Audacious] - Music player
 - [PulseEffects] - Limiter, compressor, autogain, equalizer for pulse audio
-- [Gedit] - Text viewer
-- [Evince] - Document and PDF viewer
+- [Kate] - Text editor on KDE.
+- [Okular] - Document, Markdown and PDF viewer on KDE.
 - [Geeqie] - Picture viewer
-- [Pencil] - Draw prototypes
+- [Pencil] - Draw prototypest
 - [Gimp] - GNU Image Manipulation Program
-- [scrcpy] - Remote control for android devices 
+- [scrcpy] - Remote control for android devices.
+- [plank] - The simplest dock on the planet.
+- [Shotcut] - Free and open source, cross-platform video editor based on MLT Framework and KDE, faster than kdenlive. 
+- [kdenlive] - Free and open source video editor, based on MLT Framework and KDE Frameworks 5.
+- [Olive] - Free and open source video editor, more professional than shotcut and kdenlive, now in alpha test.
+- [qcad] - 2D CAD.
+- [freecad] - 3D CAD.
 
 ## Docker images
 - [node:10-buster-slim] - Minify debian and node image.
