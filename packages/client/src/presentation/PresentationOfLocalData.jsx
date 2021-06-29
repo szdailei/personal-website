@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Div, Input } from '../styled/index.js';
 import parseMarkdown from './parse-markdown.js';
-import Pages from './Pages.jsx';
+import Controller from './Controller.jsx';
 
 const reader = new FileReader();
 
@@ -35,7 +35,7 @@ function PresentationOfLocalData() {
   }
 
   const parsedResult = parseMarkdown(data);
-  return <Pages data={parsedResult} />;
+  return <Controller data={parsedResult} />;
 }
 
 export default PresentationOfLocalData;

@@ -10,7 +10,7 @@ function toggleFullScreen() {
   }
 }
 
-function Pages({ data }) {
+function Controller({ data }) {
   const [currentPageCount, setCurrentPageCount] = useState(0);
   const [isAllPages, setIsAllPages] = useState(false);
 
@@ -81,8 +81,8 @@ function Pages({ data }) {
   return <Article fontSize="1.8em">{showData}</Article>;
 }
 
-Pages.propTypes = {
+Controller.propTypes = {
   data: PropTypes.arrayOf(PropTypes.element).isRequired,
 };
 
-export default Pages;
+export default Controller;

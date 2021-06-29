@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useRemoteData } from '../lib/network.js';
 import parseMarkdown from './parse-markdown.js';
-import Pages from './Pages.jsx';
+import Controller from './Controller.jsx';
 
 function PresentationOfRemoteData() {
   const { course } = useParams();
@@ -12,7 +12,7 @@ function PresentationOfRemoteData() {
   if (!data) return null;
 
   const parsedResult = parseMarkdown(data.getCourse);
-  return <Pages data={parsedResult} />;
+  return <Controller data={parsedResult} />;
 }
 
 export default PresentationOfRemoteData;
