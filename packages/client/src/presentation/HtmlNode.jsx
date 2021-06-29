@@ -68,6 +68,12 @@ function recursiveParseElement(element) {
     case 'BR':
       node = <br key={makeid()} />;
       break;
+    case 'DEL':
+      node = <del key={makeid()}>{children}</del>;
+      break;
+    case 'STRONG':
+      node = <strong key={makeid()}>{children}</strong>;
+      break;
     case 'DIV':
       node = (
         <Div key={makeid()} {...attributes}>
