@@ -140,7 +140,7 @@
 ## Linux softwares
 - [YouTube Links](https://greasyfork.org/en/scripts/5566-youtube-links) - Download YouTube videos. Video formats are listed at the top of the watch page. Video links are tagged so that they can be downloaded easily.
 - [youtube-dl] - Download videos from youtube.com or other video platforms.
-- [Celluloid] - Front of mpv
+- [QtAV](https://github.com/wang-bin/QtAV) - QtAV is a multimedia playback library based on Qt and FFmpeg. It can help you to write a player with less effort than ever before.
 - [Audacious] - Music player
 - [PulseEffects] - Limiter, compressor, autogain, equalizer for pulse audio
 - [Kate] - Text editor on KDE.
